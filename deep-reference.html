@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayurveda Deep Reference — by Aryan | @EPureNest</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap');
+:root{
+  --gold:#c9a84c; --gold-lt:#e8c97a; --gold-dk:#8b6914;
+  --cream:#faf6ee; --cream2:#f2ead8; --brown:#3d2b1f;
+  --green:#2d5a3d; --green-lt:#4a7c5e; --green-pale:#e8f2ec;
+  --saffron:#e8941a; --sand:#d4c4a0; --text:#3d2b1f; --text2:#6b5040; --text3:#9e8060;
+  --border:rgba(201,168,76,0.25); --border2:rgba(201,168,76,0.5);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);padding:40px;}
+.page-header{text-align:center;padding:40px 0 32px;border-bottom:2px solid var(--border2);margin-bottom:40px;}
+.page-header h1{font-family:'Cinzel',serif;font-size:32px;color:var(--brown);letter-spacing:0.06em;}
+.page-header .by{font-size:13px;color:var(--gold-dk);margin-top:10px;font-weight:500;letter-spacing:0.1em;}
+.section{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:28px;}
+.section h2{font-family:'Cinzel',serif;font-size:22px;color:var(--brown);margin-bottom:8px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.section h3{font-family:'Cinzel',serif;font-size:16px;color:var(--green);margin:18px 0 8px;}
+.section h4{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-dk);margin:12px 0 6px;letter-spacing:0.06em;text-transform:uppercase;}
+.section p{font-size:14px;line-height:1.8;color:var(--text2);margin-bottom:10px;}
+.section ul{list-style:none;margin-bottom:12px;}
+.section ul li{padding:7px 0;border-bottom:1px solid rgba(201,168,76,0.1);font-size:13.5px;color:var(--text2);line-height:1.65;display:flex;gap:10px;}
+.section ul li::before{content:'❧';color:var(--gold);flex-shrink:0;}
+.section ul li:last-child{border-bottom:none;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.herb-mini{background:var(--cream2);border:1px solid var(--border);border-radius:12px;padding:18px;}
+.herb-mini h4{font-family:'Cinzel',serif;font-size:14px;color:var(--brown);margin-bottom:4px;}
+.herb-mini .skt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--gold-dk);margin-bottom:8px;}
+.herb-mini p{font-size:12.5px;color:var(--text2);line-height:1.6;margin:0;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th{background:var(--brown);color:var(--gold-lt);font-family:'Cinzel',serif;font-size:12px;padding:11px 14px;text-align:left;letter-spacing:0.05em;}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text2);}
+tr:hover td{background:rgba(201,168,76,0.04);}
+.marma-card{background:var(--cream2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px;}
+.marma-card h4{font-family:'Cinzel',serif;font-size:14px;color:var(--brown);margin-bottom:6px;}
+.marma-card .location{font-size:12px;color:var(--gold-dk);font-weight:600;margin-bottom:6px;}
+.marma-card p{font-size:12.5px;color:var(--text2);line-height:1.6;margin:0;}
+.quote{background:rgba(201,168,76,0.07);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+.quote p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--brown);margin-bottom:6px;}
+.quote .src{font-size:11px;color:var(--text3);font-weight:600;letter-spacing:0.08em;margin:0;}
+.tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;margin:2px;background:rgba(45,90,61,0.1);color:var(--green);border:1px solid rgba(45,90,61,0.2);}
+.footer-note{text-align:center;padding:32px 0;border-top:1px solid var(--border);margin-top:40px;font-size:13px;color:var(--text3);}
+.footer-note strong{color:var(--gold-dk);}
+@media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr;}body{padding:16px;}}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>🪷 AYURVEDA DEEP REFERENCE</h1>
+  <div class="by">Compiled by Aryan &nbsp;·&nbsp; @EPureNest &nbsp;·&nbsp; Research & Educational Use Only</div>
+</div>
+
+<!-- ============================================================
+     EXTENDED HERB MATERIA MEDICA
+============================================================ -->
+<div class="section">
+  <h2>Extended Materia Medica — Additional Medicinal Herbs</h2>
+
+  <div class="grid-3">
+    <div class="herb-mini">
+      <h4>Shatavari</h4>
+      <div class="skt">Asparagus racemosus — शतावरी</div>
+      <p><strong>Rasa:</strong> Sweet, bitter. <strong>Virya:</strong> Cooling. Female reproductive tonic, galactagogue, adaptogen. 100 roots = 100 husbands (strength metaphor). Builds Ojas, increases milk production, fertility tonic, anti-ulcer, immunomodulator.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Haritaki</h4>
+      <div class="skt">Terminalia chebula — हरीतकी</div>
+      <p><strong>Rasa:</strong> Five tastes (no sour). <strong>Virya:</strong> Heating. Called "Mother of herbs." Tridoshic. Digestive, laxative, anti-ageing, anti-bacterial, expectorant. Component of Triphala. Best herb for Vata. "Haritaki is like a mother."</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Bibhitaki</h4>
+      <div class="skt">Terminalia bellirica — विभीतकी</div>
+      <p><strong>Rasa:</strong> Astringent. <strong>Virya:</strong> Heating. Primarily targets Kapha. Expectorant, anti-mucolytic, laxative, hair tonic, eye strengthener. Component of Triphala. Best herb for Kapha and respiratory conditions.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Manjistha</h4>
+      <div class="skt">Rubia cordifolia — मंजिष्ठा</div>
+      <p><strong>Rasa:</strong> Sweet, bitter, astringent. <strong>Virya:</strong> Heating. Best blood purifier in Ayurveda. Targets Pitta and Kapha in blood (Rakta dhatu). Skin diseases, lymphatic congestion, menstrual disorders, urinary tract, wound healing.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Vidari (Vidarikanda)</h4>
+      <div class="skt">Pueraria tuberosa — विदारीकंद</div>
+      <p><strong>Rasa:</strong> Sweet. <strong>Virya:</strong> Cooling. Excellent Vata and Pitta Rasayana. Muscle building, sexual vitality, milk production, strength, weight gain for underweight. Similar to wild yam but more Ayurvedic specific.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Bala (Country Mallow)</h4>
+      <div class="skt">Sida cordifolia — बला</div>
+      <p><strong>Rasa:</strong> Sweet. <strong>Virya:</strong> Cooling. Strongest nervine tonic in Ayurveda. Muscle strengthener, paralysis, post-stroke recovery, arthritis, MS. The root is used in Mahanarayan taila. Vata-specific Rasayana.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Punarnava</h4>
+      <div class="skt">Boerhavia diffusa — पुनर्नवा</div>
+      <p><strong>Rasa:</strong> Sweet, bitter. <strong>Virya:</strong> Cooling. Diuretic, anti-inflammatory, liver protective. Excellent for oedema, kidney disease, liver disorders, anaemia, obesity, Kapha disorders. Name means "renewer" — regenerates body tissues.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Shallaki (Boswellia)</h4>
+      <div class="skt">Boswellia serrata — शल्लकी</div>
+      <p><strong>Rasa:</strong> Bitter, astringent. <strong>Virya:</strong> Cooling. Most important anti-inflammatory herb. Arthritis, IBD, asthma, brain health (crosses blood-brain barrier). Strong clinical research evidence. Inhibits 5-LOX pathway.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Chitraka (Leadwort)</h4>
+      <div class="skt">Plumbago zeylanica — चित्रक</div>
+      <p><strong>Rasa:</strong> Pungent. <strong>Virya:</strong> Heating. Strongest Agni-kindler. Digestive fire stimulant, carminative, anti-parasitic, anti-obesity. Used in Chitrakaharitaki avaleha and many digestive formulations. Caution: Potent herb, use under supervision.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Kutki (Picrorhiza)</h4>
+      <div class="skt">Picrorhiza kurroa — कुटकी</div>
+      <p><strong>Rasa:</strong> Bitter. <strong>Virya:</strong> Cooling. Most powerful liver herb in Ayurveda. Hepatoprotective, choleretic, anti-inflammatory, anti-malarial, immune-modulator. Pitta and Kapha reducing. For hepatitis, liver cirrhosis, jaundice, skin diseases.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Jatamansi</h4>
+      <div class="skt">Nardostachys jatamansi — जटामांसी</div>
+      <p><strong>Rasa:</strong> Bitter, sweet, astringent. <strong>Virya:</strong> Cooling. Nervine sedative, anxiolytic, anti-convulsant, memory enhancer. Anxiety, epilepsy, palpitations, insomnia, hysteria, hair growth. Calms Vata and Pitta in the nervous system.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Vacha (Calamus)</h4>
+      <div class="skt">Acorus calamus — वचा</div>
+      <p><strong>Rasa:</strong> Bitter, pungent. <strong>Virya:</strong> Heating. Brain tonic, nervine stimulant, expectorant, anti-convulsant. Speech disorders, autism (research), epilepsy, memory, chronic sinusitis. Used in Brahmi preparations for synergy.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Dashamoola</h4>
+      <div class="skt">Ten root combination — दशमूल</div>
+      <p><strong>Composition:</strong> Bilva, Agnimantha, Shyonaka, Patala, Gambhari, Shalaparni, Prishniparni, Brihati, Kantakari, Gokshura. Tridoshic anti-inflammatory. Post-partum, respiratory, Vata disorders, fever, pain. Dashamoolaharitaki — classic formulation.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Shilajatu (Shilajit)</h4>
+      <div class="skt">Asphaltum punjabianum — शिलाजतु</div>
+      <p><strong>Not a plant</strong> — mineral resin from Himalayan rocks. Yoga (carrier) for all minerals. Anti-ageing, anti-diabetic, aphrodisiac, Ojas-building. "There is no disease in the world that Shilajatu cannot cure" — Charaka. Must be purified before use.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Gokshura</h4>
+      <div class="skt">Tribulus terrestris — गोक्षुर</div>
+      <p><strong>Rasa:</strong> Sweet. <strong>Virya:</strong> Cooling. Excellent diuretic, lithotriptic (dissolves kidney stones), reproductive tonic. UTI, kidney stones, sexual vitality, PCOS, prostate health. Balances Vata and Pitta in urinary system.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Pippali (Long Pepper)</h4>
+      <div class="skt">Piper longum — पिप्पली</div>
+      <p><strong>Rasa:</strong> Pungent. <strong>Virya:</strong> Heating. Respiratory herb, bioavailability enhancer (Yogavahi), digestive. Asthma, chronic cough, liver diseases. Key component of Trikatu. Pippali Rasayana — monthly increasing-decreasing dose protocol for longevity.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Kesar (Saffron)</h4>
+      <div class="skt">Crocus sativus — केशर</div>
+      <p><strong>Rasa:</strong> Sweet, bitter. <strong>Virya:</strong> Heating. Builds Ojas and Tejas. Anti-depressant (clinical RCT evidence), aphrodisiac, complexion enhancer, cardiac tonic. 2-4 strands in warm milk. Also used in Kesar-Ashwagandha milk for strength.</p>
+    </div>
+    <div class="herb-mini">
+      <h4>Arjuna</h4>
+      <div class="skt">Terminalia arjuna — अर्जुन</div>
+      <p><strong>Rasa:</strong> Astringent. <strong>Virya:</strong> Cooling. The supreme cardiac herb of Ayurveda. Heart failure, angina, myocardial protection, hypertension, hypercholesterolaemia. Take as Arjuna ksheerapaka (milk decoction). Clinical research strongly supports.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NADI PARIKSHA — PULSE DIAGNOSIS
+============================================================ -->
+<div class="section">
+  <h2>Nadi Pariksha — Pulse Diagnosis</h2>
+  <p>Pulse diagnosis is considered one of the most sophisticated diagnostic tools in Ayurveda. The Vaidya (physician) uses three fingers (index, middle, ring) placed just below the wrist crease on the radial artery to assess the state of the doshas, dhatus, and organs. Classical texts describe the ability to diagnose diseases not yet manifested, past health history, and even future tendencies through pulse.</p>
+
+  <div class="grid-2">
+    <div>
+      <h3>Finger Positions & Doshas</h3>
+      <ul>
+        <li><strong>Index finger (Tarjani)</strong> — Vata pulse. Position: nearest the wrist crease. Character: Irregular, thin, fast, like a snake's movement (Sarpa gati)</li>
+        <li><strong>Middle finger (Madhyama)</strong> — Pitta pulse. Character: Strong, sharp, jumping, like a frog (Manduka gati) or crow (Kaka gati)</li>
+        <li><strong>Ring finger (Anamika)</strong> — Kapha pulse. Character: Slow, steady, deep, like a swan or pigeon (Hamsa/Kapota gati)</li>
+      </ul>
+      <h3>Pulse States</h3>
+      <ul>
+        <li><strong>Sama Prakriti pulse:</strong> All three fingers feel balanced, regular, rhythmic</li>
+        <li><strong>Vata excess:</strong> Index finger pulse dominant, irregular, feels like snake wriggling</li>
+        <li><strong>Pitta excess:</strong> Middle finger dominant, jumping, forceful, warm</li>
+        <li><strong>Kapha excess:</strong> Ring finger dominant, slow, cold, heavy, deep</li>
+        <li><strong>Ama in pulse:</strong> Slow, deep, feels heavy and sticky — "coated" quality</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Sapta Dhatu Nadi (Seven Tissue Pulses)</h3>
+      <p>Advanced pulse reading can assess all seven tissues. The Vaidya presses at different depths:</p>
+      <ul>
+        <li><strong>Superficial (Tri-doshas):</strong> Vata (index), Pitta (middle), Kapha (ring)</li>
+        <li><strong>Middle depth:</strong> Liver/Pitta organs (middle finger)</li>
+        <li><strong>Deep depth:</strong> Dhatu assessment by rotating fingers</li>
+      </ul>
+      <h3>When to Take Pulse</h3>
+      <ul>
+        <li>Best: Early morning, before eating, on empty stomach</li>
+        <li>Not valid after: Heavy meal, exercise, bath, stress, alcohol</li>
+        <li>Most accurate: Brahma Muhurta (4-6am)</li>
+        <li>Both wrists: Left = Kapha-Pitta (left side organs), Right = Vata-Pitta (right side organs)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MARMA POINTS
+============================================================ -->
+<div class="section">
+  <h2>Marma Points — Vital Energy Points</h2>
+  <p>Marma points are 107 vital energy points described in Sushruta Samhita — junctions of muscles, veins, ligaments, bones, and joints where life force (Prana) is concentrated. They are the Ayurvedic equivalent of acupuncture points and chakra intersections. Injury to major Marma points can be life-threatening; gentle stimulation heals and energises.</p>
+
+  <div class="grid-2">
+    <div>
+      <h3>Classification by Tissue (Mamsala, etc.)</h3>
+      <ul>
+        <li><strong>Mamsa Marma (11):</strong> Situated in muscle tissue. Example: Talahridaya (center of palm)</li>
+        <li><strong>Sira Marma (41):</strong> Situated in blood vessels/veins. Example: Stanamula (breast root)</li>
+        <li><strong>Snayu Marma (27):</strong> Situated in tendons/ligaments. Example: Ani (above knee)</li>
+        <li><strong>Asthi Marma (8):</strong> Situated in bone. Example: Katikataruna (hip bone)</li>
+        <li><strong>Sandhi Marma (20):</strong> Situated in joints. Example: Kurpara (elbow joint)</li>
+      </ul>
+      <h3>Classification by Effect if Injured</h3>
+      <ul>
+        <li><strong>Sadya Pranahara (3):</strong> Immediately fatal — Brahmarandhra (crown), Hridaya (heart), Shringataka (throat)</li>
+        <li><strong>Kalantara Pranahara (33):</strong> Fatal over time if untreated</li>
+        <li><strong>Vishalyaghna (3):</strong> Fatal only on removal of weapon</li>
+        <li><strong>Vaikalyakara (44):</strong> Causes deformity/disability</li>
+        <li><strong>Rujakara (22):</strong> Causes severe pain</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Important Therapeutic Marma Points</h3>
+      <div class="marma-card">
+        <h4>Adhipati — Crown of Head</h4>
+        <div class="location">Location: Top of skull, Brahmarandhra</div>
+        <p>Governs: Prana, consciousness, pineal gland. Gentle stimulation with Brahmi oil: clarity, spiritual awareness, headache relief.</p>
+      </div>
+      <div class="marma-card">
+        <h4>Sthapani — Third Eye</h4>
+        <div class="location">Location: Between eyebrows, Ajna chakra</div>
+        <p>Governs: Mind, pituitary, intuition. Shirodhara oil falls here. Stimulation relieves headaches, anxiety, eye strain, sinus congestion.</p>
+      </div>
+      <div class="marma-card">
+        <h4>Hridaya — Heart Point</h4>
+        <div class="location">Location: Centre of sternum</div>
+        <p>Governs: Heart, emotional centre, Prana Vata. Gentle pressure with warm ghee relieves palpitations, grief, emotional pain.</p>
+      </div>
+      <div class="marma-card">
+        <h4>Nabhi — Navel Point</h4>
+        <div class="location">Location: Navel centre</div>
+        <p>Governs: Agni, Samana Vata, small intestine. Filling navel with warm sesame oil overnight balances Vata, improves digestion, relieves dryness.</p>
+      </div>
+      <div class="marma-card">
+        <h4>Kshipra — Between Thumb and Index</h4>
+        <div class="location">Location: Webbing between thumb and index finger (hand and foot)</div>
+        <p>Governs: Prana flow, emergency resuscitation point. Pressure here revives consciousness in fainting.</p>
+      </div>
+      <div class="marma-card">
+        <h4>Talahridaya — Palm and Sole Centre</h4>
+        <div class="location">Location: Centre of palm; centre of sole</div>
+        <p>Governs: Entire body through reflex connections. Foot Abhyanga (oil massage of soles) with sesame oil before sleep promotes deep sleep, grounds Vata, improves vision.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SROTAS — BODY CHANNELS
+============================================================ -->
+<div class="section">
+  <h2>Srotas — The Channels of the Body</h2>
+  <p>Srotas are the channels through which nutrients, wastes, and vital forces flow in the body. Charaka describes 13 main Srotas (plus Rajovaha and Stanyavaha Srotas in women). Disease begins with Srotodushti — obstruction, excess flow, diversion, or collapse of these channels.</p>
+
+  <table>
+    <tr><th>Srotas</th><th>What it Carries</th><th>Root (Mula)</th><th>Disease of Obstruction</th></tr>
+    <tr><td>Pranavaha Srotas</td><td>Prana (vital breath, oxygen)</td><td>Heart, aorta</td><td>Breathlessness, hiccup, asthma</td></tr>
+    <tr><td>Udakavaha Srotas</td><td>Water, fluid balance</td><td>Palate, pancreas</td><td>Excessive thirst, dryness, oedema</td></tr>
+    <tr><td>Annavaha Srotas</td><td>Food (digestive tract)</td><td>Stomach, left side</td><td>Digestive disorders, anorexia, nausea</td></tr>
+    <tr><td>Rasavaha Srotas</td><td>Plasma/lymph (Rasa dhatu)</td><td>Heart, blood vessels</td><td>Loss of taste, pallor, fatigue, anaemia</td></tr>
+    <tr><td>Raktavaha Srotas</td><td>Blood (Rakta dhatu)</td><td>Liver, spleen</td><td>Skin diseases, bleeding disorders, jaundice</td></tr>
+    <tr><td>Mamsavaha Srotas</td><td>Muscle tissue</td><td>Tendons, skin</td><td>Tumours, goitre, muscular hypertrophy</td></tr>
+    <tr><td>Medovaha Srotas</td><td>Adipose tissue, fat</td><td>Kidneys, fat tissue</td><td>Obesity, diabetes, excessive sweating</td></tr>
+    <tr><td>Asthivaha Srotas</td><td>Bone tissue</td><td>Hip/pelvic girdle</td><td>Joint disorders, excess hair/nails, osteoporosis</td></tr>
+    <tr><td>Majjavaha Srotas</td><td>Bone marrow, nerve tissue</td><td>Joints, bones</td><td>Deep joint pain, darkness, loss of consciousness</td></tr>
+    <tr><td>Shukravaha Srotas</td><td>Reproductive tissue</td><td>Testes, ovaries</td><td>Infertility, impotence, abnormal semen</td></tr>
+    <tr><td>Purishavaha Srotas</td><td>Faeces</td><td>Colon, rectum</td><td>Constipation, loose stools, Grahani</td></tr>
+    <tr><td>Mutravaha Srotas</td><td>Urine</td><td>Bladder, kidneys</td><td>Dysuria, anuria, polyuria, kidney stones</td></tr>
+    <tr><td>Svedavaha Srotas</td><td>Sweat</td><td>Adipose tissue, skin</td><td>Excessive/absent sweating, burning skin, dry skin</td></tr>
+    <tr><td>Manovaha Srotas</td><td>Mind/consciousness</td><td>Heart, sense organs</td><td>Mental disorders, psychosis, anxiety, depression</td></tr>
+  </table>
+</div>
+
+<!-- ============================================================
+     PANCHAMAHABHUTA IN FOOD
+============================================================ -->
+<div class="section">
+  <h2>Rasa (Taste) Science — Shad Rasa</h2>
+  <p>Ayurveda identifies six tastes (Shad Rasa). Each taste has specific effects on the doshas and body tissues. A complete meal should ideally contain all six tastes in appropriate proportion for the individual's constitution and season.</p>
+
+  <table>
+    <tr><th>Taste (Rasa)</th><th>Elements</th><th>Effect on Doshas</th><th>Action on Body</th><th>Examples</th></tr>
+    <tr><td><strong>Madhura (Sweet)</strong></td><td>Earth + Water</td><td>V↓ P↓ K↑</td><td>Nourishing, building, cooling, lubricating. Builds all dhatus and Ojas. Most important taste for Vata types.</td><td>Rice, milk, ghee, dates, wheat, sweet potato, coconut</td></tr>
+    <tr><td><strong>Amla (Sour)</strong></td><td>Earth + Fire</td><td>V↓ P↑ K↑</td><td>Stimulates Agni, increases secretions, nourishes heart, relieves thirst. Good in small amounts for Vata.</td><td>Lemon, tamarind, yoghurt, fermented foods, vinegar, green mango</td></tr>
+    <tr><td><strong>Lavana (Salty)</strong></td><td>Water + Fire</td><td>V↓ P↑ K↑</td><td>Digestive stimulant, laxative, retains water, softens tissues. Saindhava (rock salt) best — tridoshic.</td><td>Rock salt, sea salt, seaweed, soy sauce</td></tr>
+    <tr><td><strong>Katu (Pungent/Spicy)</strong></td><td>Fire + Air</td><td>V↑ P↑ K↓</td><td>Stimulates Agni, anti-obesity, anti-Kapha, carminative, clears channels. Best taste for Kapha types.</td><td>Ginger, black pepper, chilli, mustard, garlic, onion, radish</td></tr>
+    <tr><td><strong>Tikta (Bitter)</strong></td><td>Air + Space</td><td>V↑ P↓ K↓</td><td>Detoxifying, anti-inflammatory, blood purifying, anti-diabetic, lightening. Second most important for Pitta.</td><td>Neem, bitter gourd, turmeric, fenugreek, coffee, leafy greens</td></tr>
+    <tr><td><strong>Kashaya (Astringent)</strong></td><td>Air + Earth</td><td>V↑ P↓ K↓</td><td>Tightening, drying, haemostatic, anti-inflammatory, promotes wound healing.</td><td>Pomegranate, unripe banana, lentils, legumes, tea, haritaki</td></tr>
+  </table>
+
+  <div class="quote" style="margin-top:20px;">
+    <p>"Madhura amla lavanotpannam prithvyapyagnimarutaatmakam... Shad rasaanaam hi vishesham vakshyaami."</p>
+    <div class="src">Charaka Samhita — Sutrasthana 26 — On the science of the six tastes</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     CLASSICAL YOGA TEXTS IN AYURVEDA
+============================================================ -->
+<div class="section">
+  <h2>Manasa Roga — Mental Health in Ayurveda</h2>
+  <p>Ayurveda considers the mind (Manas) as governed by three Gunas — Sattva (purity, clarity), Rajas (activity, passion), and Tamas (inertia, heaviness). Mental disease arises from the imbalance of these gunas combined with doshic involvement.</p>
+
+  <div class="grid-2">
+    <div>
+      <h3>Three Manasika Doshas</h3>
+      <ul>
+        <li><strong>Sattva (Pure):</strong> Clarity, compassion, wisdom, equanimity. Promotes health of mind and spirit. Goal of all Ayurvedic mental treatment is to increase Sattva.</li>
+        <li><strong>Rajas (Active):</strong> Desire, anger, ambition, restlessness. Causes anxiety, aggression, manipulation. Pitta-related.</li>
+        <li><strong>Tamas (Inert):</strong> Heaviness, delusion, attachment, depression, confusion, sleep. Kapha-related.</li>
+      </ul>
+      <h3>Sattvavajaya — Mental Discipline</h3>
+      <ul>
+        <li>Control of mind through knowledge (Jnana), wisdom (Vijnana), and courage (Dhairya)</li>
+        <li>Memory training (Smriti) — daily practice of memorising sacred texts</li>
+        <li>Concentration (Samadhi) — meditation practice</li>
+        <li>Proper use of sense organs — Indriya Vigyana</li>
+        <li>Satsanga — association with wise, noble, uplifting people</li>
+        <li>Mantra chanting — Vibration therapy for the mind</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Sattvic Foods for Mental Health</h3>
+      <ul>
+        <li>Fresh organic fruits and vegetables</li>
+        <li>Pure cow's milk (warm, spiced)</li>
+        <li>Ghee — called "brain food" by Ayurveda</li>
+        <li>Honey (raw, unheated)</li>
+        <li>Almonds, walnuts (soaked)</li>
+        <li>Sesame seeds and tahini</li>
+        <li>Basmati rice and whole grains</li>
+        <li>Mung dal (easiest to digest)</li>
+        <li>Fresh herbs: Coriander, mint, tulsi</li>
+      </ul>
+      <h3>Rajasic / Tamasic Foods to Minimise</h3>
+      <ul>
+        <li>Tamasic: Meat, fish, eggs, alcohol, stale/leftover food, onion (in excess), garlic (in excess), mushrooms, overeating</li>
+        <li>Rajasic: Excess spicy food, coffee, tea, excessive salt, stimulants, too much sugar, fast food</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     AGNI & AMA - DETAILED
+============================================================ -->
+<div class="section">
+  <h2>Agni & Ama — Digestive Fire & Metabolic Toxins</h2>
+
+  <div class="grid-2">
+    <div>
+      <h3>The 13 Types of Agni</h3>
+      <ul>
+        <li><strong>Jatharagni (1):</strong> Primary gastric fire in stomach/small intestine. King of all Agnis. Controls all other Agnis.</li>
+        <li><strong>Dhatvagni (7):</strong> One in each of the seven dhatus — processes raw material into each tissue type</li>
+        <li><strong>Bhutagni (5):</strong> One for each of the five elements — processes element-specific components of food</li>
+      </ul>
+      <h3>Signs of Sama Agni (Balanced)</h3>
+      <ul>
+        <li>Good appetite but not excessive</li>
+        <li>Complete digestion with no bloating/gas</li>
+        <li>Normal stool — brown, floats, no odour</li>
+        <li>Light body, clear mind after eating</li>
+        <li>Good immunity and tissue quality</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Signs of Ama (Metabolic Toxins)</h3>
+      <ul>
+        <li>White coating on tongue (most reliable sign)</li>
+        <li>Foul breath and body odour</li>
+        <li>Heaviness after eating, fatigue</li>
+        <li>Blocked channels — congestion, constipation</li>
+        <li>Dull, cloudy feeling in mind</li>
+        <li>Pulse: Deep, slow, feels sticky or coated</li>
+        <li>Loss of taste and appetite</li>
+      </ul>
+      <h3>Ama-Removing Protocol</h3>
+      <ul>
+        <li>Langhan (fasting/lightening) — most powerful Ama remover</li>
+        <li>Trikatu — burns Ama at source</li>
+        <li>Warm water throughout day — flushes Ama</li>
+        <li>Ginger tea — digestive and Ama-clearing</li>
+        <li>Triphala at night — clears intestinal Ama</li>
+        <li>Avoid heavy meals — give Agni rest to clear backlog</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<div class="footer-note">
+  <strong>⚠️ Research & Educational Use Only</strong><br>
+  Compiled from: Charaka Samhita · Sushruta Samhita · Ashtanga Hridayam · Bhavaprakasha · Sharangadhara Samhita · Classical Ayurvedic literature<br>
+  Always consult a qualified Ayurvedic physician before any treatment. By <strong>Aryan</strong> · @EPureNest
+</div>
+
+</body>
+</html>

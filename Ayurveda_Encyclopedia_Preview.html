@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayurveda Encyclopedia — by Aryan | @EPureNest</title>
+<style>
+/* ============================================================
+   AYURVEDA ENCYCLOPEDIA — LUXURY DESIGN SYSTEM
+   by Aryan | @EPureNest
+============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&family=Cinzel:wght@400;600;700&display=swap');
+
+:root {
+  --gold:       #c9a84c;
+  --gold-lt:    #e8c97a;
+  --gold-dk:    #8b6914;
+  --cream:      #faf6ee;
+  --cream2:     #f2ead8;
+  --brown:      #3d2b1f;
+  --brown-lt:   #6b4c35;
+  --green:      #2d5a3d;
+  --green-lt:   #4a7c5e;
+  --green-pale: #e8f2ec;
+  --terracotta: #c1440e;
+  --saffron:    #e8941a;
+  --turmeric:   #d4a017;
+  --sand:       #d4c4a0;
+  --ink:        #1a1008;
+  --text:       #3d2b1f;
+  --text2:      #6b5040;
+  --text3:      #9e8060;
+  --border:     rgba(201,168,76,0.25);
+  --border2:    rgba(201,168,76,0.5);
+  --shadow:     0 8px 40px rgba(61,43,31,0.15);
+  --shadow2:    0 20px 80px rgba(61,43,31,0.25);
+  --r:          12px;
+  --r2:         20px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Jost',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ---- BACKGROUND TEXTURE ---- */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 100%, rgba(45,90,61,0.05) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 5 C22 5 8 19 8 37 C8 55 22 69 40 69 C58 69 72 55 72 37 C72 19 58 5 40 5 Z M40 12 C54 12 65 23 65 37 C65 51 54 62 40 62 C26 62 15 51 15 37 C15 23 26 12 40 12 Z' fill='%23c9a84c' fill-opacity='0.018'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   TOP BAR — TWITTER
+============================================================ */
+.top-bar {
+  position:sticky; top:0; z-index:200;
+  background:var(--brown);
+  padding:9px 24px;
+  display:flex; align-items:center; justify-content:space-between;
+  border-bottom:2px solid var(--gold);
+}
+.top-bar-left {
+  display:flex; align-items:center; gap:10px;
+  font-family:'Jost',sans-serif; font-size:13px; font-weight:500;
+  color:var(--gold-lt); letter-spacing:0.06em;
+}
+.top-bar-left .lotus { font-size:18px; }
+.twitter-badge {
+  display:flex; align-items:center; gap:7px;
+  background:rgba(201,168,76,0.15);
+  border:1px solid var(--gold);
+  border-radius:20px; padding:5px 14px;
+  text-decoration:none; transition:all 0.2s;
+  color:var(--gold-lt); font-size:13px; font-weight:600;
+  letter-spacing:0.04em;
+}
+.twitter-badge:hover { background:var(--gold); color:var(--brown); }
+.twitter-badge svg { width:15px; height:15px; fill:currentColor; }
+.top-bar-right { font-size:12px; color:var(--sand); letter-spacing:0.06em; }
+
+/* ============================================================
+   DISCLAIMER MODAL
+============================================================ */
+#disclaimer-modal {
+  position:fixed; inset:0; z-index:9999;
+  background:rgba(26,16,8,0.92); backdrop-filter:blur(16px);
+  display:flex; align-items:center; justify-content:center; padding:20px;
+}
+.disc-box {
+  background:var(--cream); border-radius:var(--r2);
+  max-width:700px; width:100%; max-height:90vh; overflow-y:auto;
+  padding:48px 52px;
+  border:1px solid var(--border2);
+  box-shadow:var(--shadow2);
+}
+.disc-box .d-icon { font-size:48px; margin-bottom:16px; display:block; text-align:center; }
+.disc-box h1 {
+  font-family:'Cinzel',serif; font-size:22px; font-weight:600;
+  color:var(--brown); text-align:center; margin-bottom:6px;
+  letter-spacing:0.08em;
+}
+.disc-box .d-sub {
+  text-align:center; font-size:13px; color:var(--text3);
+  margin-bottom:28px; letter-spacing:0.04em;
+}
+.disc-content {
+  background:rgba(201,168,76,0.07);
+  border:1px solid var(--border2);
+  border-radius:var(--r); padding:22px; margin-bottom:20px;
+  font-size:13.5px; line-height:1.85; color:var(--text);
+}
+.disc-content p { margin-bottom:12px; }
+.disc-content p:last-child { margin-bottom:0; }
+.disc-content strong { color:var(--brown); font-weight:600; }
+.disc-checks { margin-bottom:22px; }
+.chk-row {
+  display:flex; gap:12px; align-items:flex-start;
+  margin-bottom:12px; cursor:pointer;
+}
+.chk-row input { width:17px; height:17px; accent-color:var(--green); margin-top:2px; cursor:pointer; }
+.chk-row label { font-size:13px; line-height:1.55; cursor:pointer; color:var(--text2); }
+.disc-btn {
+  width:100%; padding:16px; border-radius:var(--r);
+  background:linear-gradient(135deg,var(--green),var(--green-lt));
+  color:#fff; font-family:'Cinzel',serif; font-size:15px;
+  font-weight:600; letter-spacing:0.08em; border:none; cursor:pointer;
+  transition:all 0.2s;
+}
+.disc-btn:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 8px 24px rgba(45,90,61,0.35); }
+.disc-btn:disabled { opacity:0.4; cursor:not-allowed; }
+
+/* ============================================================
+   HEADER
+============================================================ */
+header {
+  position:relative; z-index:10;
+  background:linear-gradient(180deg, var(--brown) 0%, #2a1a0e 100%);
+  padding:60px 40px 50px;
+  text-align:center;
+  border-bottom:3px solid var(--gold);
+  overflow:hidden;
+}
+header::before {
+  content:''; position:absolute; inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='55' stroke='%23c9a84c' stroke-width='0.5' fill='none' stroke-opacity='0.1'/%3E%3Ccircle cx='60' cy='60' r='40' stroke='%23c9a84c' stroke-width='0.5' fill='none' stroke-opacity='0.08'/%3E%3Cpath d='M60 10 L65 40 L60 35 L55 40 Z' fill='%23c9a84c' fill-opacity='0.06'/%3E%3C/svg%3E") center/200px repeat;
+  pointer-events:none;
+}
+.header-inner { position:relative; z-index:1; max-width:900px; margin:0 auto; }
+.header-eyebrow {
+  font-family:'Jost',sans-serif; font-size:11px; font-weight:500;
+  letter-spacing:0.25em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:18px;
+}
+header h1 {
+  font-family:'Cinzel',serif; font-size:clamp(32px,5vw,58px);
+  font-weight:700; color:var(--cream);
+  line-height:1.1; letter-spacing:0.04em; margin-bottom:8px;
+}
+header h1 span { color:var(--gold); }
+.header-sub {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:20px; color:var(--sand); margin-bottom:20px;
+}
+.header-by {
+  font-size:13px; color:var(--gold-lt); letter-spacing:0.12em;
+  font-weight:500;
+}
+.header-divider {
+  width:120px; height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:20px auto;
+}
+.header-desc {
+  font-size:15px; color:rgba(210,190,160,0.85); line-height:1.7;
+  max-width:680px; margin:0 auto;
+}
+
+/* ============================================================
+   SEARCH BAR
+============================================================ */
+.search-wrap {
+  position:relative; z-index:10;
+  background:var(--cream2);
+  border-bottom:1px solid var(--border);
+  padding:28px 40px;
+}
+.search-inner { max-width:900px; margin:0 auto; }
+.search-label {
+  font-size:11px; font-weight:600; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--text3); margin-bottom:10px;
+}
+.search-box {
+  display:flex; gap:10px; align-items:center;
+}
+.search-input {
+  flex:1; padding:14px 20px;
+  border:1.5px solid var(--border2); border-radius:var(--r);
+  background:#fff; font-family:'Jost',sans-serif; font-size:15px;
+  color:var(--text); outline:none; transition:all 0.2s;
+}
+.search-input:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,0.1); }
+.search-input::placeholder { color:var(--text3); }
+.search-btn {
+  padding:14px 28px; border-radius:var(--r);
+  background:linear-gradient(135deg,var(--green),var(--green-lt));
+  color:#fff; font-family:'Jost',sans-serif; font-size:14px;
+  font-weight:600; border:none; cursor:pointer; transition:all 0.2s;
+  white-space:nowrap;
+}
+.search-btn:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(45,90,61,0.3); }
+.search-tags {
+  display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;
+}
+.stag {
+  padding:5px 14px; border-radius:20px;
+  background:rgba(201,168,76,0.1); border:1px solid var(--border2);
+  font-size:12px; font-weight:500; color:var(--gold-dk);
+  cursor:pointer; transition:all 0.15s;
+}
+.stag:hover { background:var(--gold); color:#fff; }
+#search-results {
+  margin-top:20px; display:none;
+}
+
+/* ============================================================
+   NAV
+============================================================ */
+.main-nav {
+  position:sticky; top:43px; z-index:100;
+  background:rgba(250,246,238,0.97); backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:0 40px;
+}
+.nav-inner {
+  max-width:1200px; margin:0 auto;
+  display:flex; gap:0; overflow-x:auto;
+}
+.nav-inner::-webkit-scrollbar { height:0; }
+.nav-item {
+  padding:16px 20px; font-size:13px; font-weight:500;
+  color:var(--text3); cursor:pointer; white-space:nowrap;
+  border-bottom:2px solid transparent; transition:all 0.2s;
+  letter-spacing:0.03em;
+}
+.nav-item:hover { color:var(--green); }
+.nav-item.active { color:var(--green); border-bottom-color:var(--green); font-weight:600; }
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+.app-layout {
+  display:grid; grid-template-columns:280px 1fr;
+  max-width:1400px; margin:0 auto;
+  position:relative; z-index:1;
+  min-height:calc(100vh - 300px);
+}
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+.sidebar {
+  border-right:1px solid var(--border);
+  background:rgba(242,234,216,0.5);
+  padding:28px 0;
+  position:sticky; top:113px;
+  height:calc(100vh - 113px);
+  overflow-y:auto;
+}
+.sidebar::-webkit-scrollbar { width:4px; }
+.sidebar::-webkit-scrollbar-thumb { background:var(--sand); border-radius:2px; }
+.sb-head {
+  padding:0 20px 12px;
+  font-family:'Cinzel',serif; font-size:10px;
+  letter-spacing:0.18em; color:var(--gold-dk);
+  text-transform:uppercase; border-bottom:1px solid var(--border);
+  margin-bottom:8px;
+}
+.sb-item {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 20px; cursor:pointer; transition:all 0.15s;
+  border-left:3px solid transparent;
+  font-size:13.5px; color:var(--text2); font-weight:400;
+}
+.sb-item:hover { background:rgba(201,168,76,0.08); color:var(--brown); }
+.sb-item.active {
+  background:rgba(45,90,61,0.07);
+  border-left-color:var(--green);
+  color:var(--green); font-weight:600;
+}
+.sb-item .si { font-size:17px; width:22px; flex-shrink:0; text-align:center; }
+.sb-divider { height:1px; background:var(--border); margin:10px 16px; }
+.sb-label {
+  padding:6px 20px; font-size:10px; font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--text3);
+}
+
+/* ============================================================
+   MAIN CONTENT
+============================================================ */
+.main { padding:40px 48px; }
+.panel { display:none; }
+.panel.active { display:block; animation:fadeUp 0.35s ease; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ============================================================
+   PANEL HEADER
+============================================================ */
+.ph { margin-bottom:36px; }
+.ph-crumb {
+  font-size:11px; font-weight:600; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--gold-dk); margin-bottom:10px;
+}
+.ph h2 {
+  font-family:'Cinzel',serif; font-size:30px; font-weight:600;
+  color:var(--brown); line-height:1.15; letter-spacing:0.02em;
+}
+.ph p {
+  margin-top:12px; font-size:14.5px; color:var(--text2);
+  line-height:1.75; max-width:680px;
+  font-family:'Cormorant Garamond',serif; font-size:18px;
+}
+.gold-line {
+  width:80px; height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  margin:14px 0;
+}
+
+/* ============================================================
+   CARDS
+============================================================ */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+
+.card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--r2); padding:24px;
+  transition:all 0.25s; position:relative; overflow:hidden;
+}
+.card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--saffron));
+  opacity:0; transition:opacity 0.2s;
+}
+.card:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+.card:hover::before { opacity:1; }
+.card.clickable { cursor:pointer; }
+.card-icon { font-size:32px; margin-bottom:14px; }
+.card h3 {
+  font-family:'Cinzel',serif; font-size:15px; font-weight:600;
+  color:var(--brown); margin-bottom:8px;
+}
+.card p { font-size:13.5px; color:var(--text2); line-height:1.65; }
+.card-tag {
+  display:inline-block; margin-top:12px;
+  padding:3px 11px; border-radius:20px;
+  font-size:11px; font-weight:600;
+  background:rgba(201,168,76,0.12); color:var(--gold-dk);
+  border:1px solid var(--border);
+}
+
+/* ============================================================
+   SECTION BLOCKS
+============================================================ */
+.section-block {
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--r2); padding:32px;
+  margin-bottom:24px;
+}
+.section-block h3 {
+  font-family:'Cinzel',serif; font-size:18px; font-weight:600;
+  color:var(--brown); margin-bottom:16px;
+  padding-bottom:12px; border-bottom:1px solid var(--border);
+}
+.section-block h4 {
+  font-family:'Cinzel',serif; font-size:14px; font-weight:600;
+  color:var(--green); margin:16px 0 8px;
+}
+.section-block p {
+  font-size:14px; line-height:1.8; color:var(--text2);
+  margin-bottom:12px;
+}
+.section-block ul { list-style:none; }
+.section-block ul li {
+  padding:7px 0; border-bottom:1px solid rgba(201,168,76,0.1);
+  font-size:13.5px; line-height:1.6; color:var(--text2);
+  display:flex; gap:10px;
+}
+.section-block ul li::before { content:'❧'; color:var(--gold); flex-shrink:0; }
+.section-block ul li:last-child { border-bottom:none; }
+
+/* ============================================================
+   DOSHA CARDS
+============================================================ */
+.dosha-card {
+  border-radius:var(--r2); padding:28px;
+  border:1px solid var(--border);
+}
+.dosha-card.vata { background:linear-gradient(135deg,#f0f4ff,#e8eef8); border-color:#b0bde0; }
+.dosha-card.pitta { background:linear-gradient(135deg,#fff5ee,#ffeee0); border-color:#e8b090; }
+.dosha-card.kapha { background:linear-gradient(135deg,#f0faf4,#e4f4ea); border-color:#90c8a8; }
+.dosha-name {
+  font-family:'Cinzel',serif; font-size:22px; font-weight:700;
+  margin-bottom:4px;
+}
+.dosha-card.vata .dosha-name { color:#3a4a8a; }
+.dosha-card.pitta .dosha-name { color:#c14020; }
+.dosha-card.kapha .dosha-name { color:#2a6a4a; }
+.dosha-sanskrit { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:var(--text3); margin-bottom:14px; }
+.dosha-elements { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.dosha-el {
+  padding:4px 12px; border-radius:20px; font-size:12px; font-weight:600;
+  background:rgba(255,255,255,0.7);
+}
+
+/* ============================================================
+   HERB CARDS
+============================================================ */
+.herb-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
+.herb-card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--r2); padding:22px; transition:all 0.2s;
+}
+.herb-card:hover { transform:translateY(-2px); box-shadow:var(--shadow); }
+.herb-name { font-family:'Cinzel',serif; font-size:15px; font-weight:600; color:var(--brown); margin-bottom:4px; }
+.herb-sanskrit { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; color:var(--gold-dk); margin-bottom:10px; }
+.herb-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+.herb-tag { padding:3px 10px; border-radius:10px; font-size:11px; font-weight:600; }
+.ht-vata { background:#e8eef8; color:#3a4a8a; }
+.ht-pitta { background:#ffeee0; color:#c14020; }
+.ht-kapha { background:#e4f4ea; color:#2a6a4a; }
+.ht-general { background:rgba(201,168,76,0.12); color:var(--gold-dk); }
+.herb-desc { font-size:13px; color:var(--text2); line-height:1.65; }
+
+/* ============================================================
+   ROUTINE TIMELINE
+============================================================ */
+.timeline { position:relative; padding-left:30px; }
+.timeline::before {
+  content:''; position:absolute; left:8px; top:0; bottom:0;
+  width:2px; background:linear-gradient(180deg,var(--gold),var(--green),var(--gold));
+}
+.tl-item { position:relative; margin-bottom:28px; }
+.tl-dot {
+  position:absolute; left:-26px; top:4px;
+  width:14px; height:14px; border-radius:50%;
+  background:var(--gold); border:2px solid #fff;
+  box-shadow:0 0 0 2px var(--gold);
+}
+.tl-time {
+  font-size:11px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--gold-dk); margin-bottom:4px;
+}
+.tl-title { font-family:'Cinzel',serif; font-size:15px; font-weight:600; color:var(--brown); margin-bottom:6px; }
+.tl-desc { font-size:13.5px; color:var(--text2); line-height:1.65; }
+
+/* ============================================================
+   TREATMENT CARDS
+============================================================ */
+.treatment-card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--r2); padding:26px; margin-bottom:18px;
+}
+.tc-head { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+.tc-icon { font-size:32px; }
+.tc-name { font-family:'Cinzel',serif; font-size:17px; font-weight:600; color:var(--brown); }
+.tc-type { font-size:12px; color:var(--text3); margin-top:2px; }
+.tc-body { font-size:13.5px; color:var(--text2); line-height:1.75; }
+.tc-benefits { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+.tc-ben {
+  padding:4px 12px; border-radius:20px; font-size:12px; font-weight:500;
+  background:var(--green-pale); color:var(--green);
+  border:1px solid rgba(45,90,61,0.2);
+}
+
+/* ============================================================
+   FOOD TABLE
+============================================================ */
+.food-table { width:100%; border-collapse:collapse; }
+.food-table th {
+  background:var(--brown); color:var(--gold-lt);
+  font-family:'Cinzel',serif; font-size:12px; font-weight:600;
+  padding:12px 16px; text-align:left; letter-spacing:0.05em;
+}
+.food-table td {
+  padding:11px 16px; border-bottom:1px solid var(--border);
+  font-size:13.5px; color:var(--text2);
+}
+.food-table tr:hover td { background:rgba(201,168,76,0.05); }
+.food-table .good { color:var(--green); font-weight:600; }
+.food-table .avoid { color:var(--terracotta); font-weight:600; }
+.food-table .mod { color:var(--saffron); font-weight:600; }
+
+/* ============================================================
+   CHATBOX
+============================================================ */
+.chat-section {
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--r2); overflow:hidden; margin-bottom:28px;
+}
+.chat-header {
+  background:linear-gradient(135deg,var(--green),var(--green-lt));
+  padding:18px 24px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.chat-header h3 {
+  font-family:'Cinzel',serif; font-size:16px; font-weight:600;
+  color:#fff; letter-spacing:0.04em;
+}
+.chat-header .free-badge {
+  background:var(--gold); color:var(--brown);
+  padding:4px 12px; border-radius:20px;
+  font-size:11px; font-weight:700; letter-spacing:0.08em;
+}
+.chat-messages {
+  height:380px; overflow-y:auto; padding:20px;
+  display:flex; flex-direction:column; gap:14px;
+  background:var(--cream);
+}
+.chat-messages::-webkit-scrollbar { width:4px; }
+.chat-messages::-webkit-scrollbar-thumb { background:var(--sand); border-radius:2px; }
+.cmsg {
+  max-width:82%; padding:12px 16px;
+  border-radius:16px; font-size:13.5px; line-height:1.65;
+}
+.cmsg.user {
+  align-self:flex-end;
+  background:var(--green); color:#fff;
+  border-radius:16px 16px 4px 16px;
+}
+.cmsg.ai {
+  align-self:flex-start;
+  background:#fff; color:var(--text);
+  border:1px solid var(--border);
+  border-radius:16px 16px 16px 4px;
+}
+.cmsg.ai .ai-label {
+  font-size:10px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--gold-dk); margin-bottom:5px;
+}
+.chat-input-row {
+  display:flex; gap:10px; padding:16px 20px;
+  border-top:1px solid var(--border);
+  background:var(--cream2);
+}
+.chat-input {
+  flex:1; padding:11px 16px; border-radius:var(--r);
+  border:1.5px solid var(--border2); background:#fff;
+  font-family:'Jost',sans-serif; font-size:14px;
+  color:var(--text); outline:none; transition:all 0.2s;
+}
+.chat-input:focus { border-color:var(--green); }
+.chat-send {
+  padding:11px 22px; border-radius:var(--r);
+  background:var(--green); color:#fff; border:none;
+  font-family:'Jost',sans-serif; font-size:14px; font-weight:600;
+  cursor:pointer; transition:all 0.2s;
+}
+.chat-send:hover { background:var(--green-lt); }
+.typing { display:flex; align-items:center; gap:4px; padding:4px 0; }
+.typing span {
+  width:7px; height:7px; background:var(--text3);
+  border-radius:50%; animation:blink 1.2s ease infinite;
+}
+.typing span:nth-child(2) { animation-delay:0.2s; }
+.typing span:nth-child(3) { animation-delay:0.4s; }
+@keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
+
+/* ============================================================
+   ALERTS / INFO BOXES
+============================================================ */
+.alert {
+  padding:14px 18px; border-radius:var(--r);
+  font-size:13.5px; line-height:1.7;
+  margin-bottom:16px; display:flex; gap:12px;
+}
+.alert-icon { font-size:18px; flex-shrink:0; margin-top:1px; }
+.alert.warn { background:rgba(212,160,23,0.1); border:1px solid rgba(212,160,23,0.35); color:#7a5800; }
+.alert.info { background:rgba(45,90,61,0.07); border:1px solid rgba(45,90,61,0.25); color:var(--green); }
+.alert.gold { background:rgba(201,168,76,0.08); border:1px solid var(--border2); color:var(--brown); }
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:11px 24px; border-radius:var(--r);
+  font-family:'Jost',sans-serif; font-size:14px; font-weight:600;
+  cursor:pointer; transition:all 0.2s; border:none; text-decoration:none;
+}
+.btn-green { background:var(--green); color:#fff; }
+.btn-green:hover { background:var(--green-lt); transform:translateY(-1px); }
+.btn-gold { background:var(--gold); color:var(--brown); }
+.btn-gold:hover { background:var(--gold-lt); }
+.btn-outline { background:transparent; border:1.5px solid var(--border2); color:var(--text2); }
+.btn-outline:hover { border-color:var(--green); color:var(--green); }
+
+/* ============================================================
+   QUOTE BLOCKS
+============================================================ */
+.quote-block {
+  background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(45,90,61,0.06));
+  border-left:4px solid var(--gold);
+  border-radius:0 var(--r) var(--r) 0;
+  padding:20px 24px; margin:20px 0;
+}
+.quote-text {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:18px; color:var(--brown); line-height:1.6; margin-bottom:8px;
+}
+.quote-source { font-size:12px; font-weight:600; letter-spacing:0.08em; color:var(--text3); }
+
+/* ============================================================
+   STAT CARDS
+============================================================ */
+.stat-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:28px; }
+.stat-card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--r2); padding:20px; text-align:center;
+}
+.stat-num {
+  font-family:'Cinzel',serif; font-size:28px; font-weight:700;
+  color:var(--brown); line-height:1;
+}
+.stat-label { font-size:11px; color:var(--text3); font-weight:500; margin-top:6px; letter-spacing:0.06em; text-transform:uppercase; }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  background:var(--brown);
+  padding:60px 40px 30px;
+  border-top:3px solid var(--gold);
+  position:relative; z-index:1;
+}
+.footer-inner { max-width:1200px; margin:0 auto; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+.footer-brand h3 {
+  font-family:'Cinzel',serif; font-size:20px; font-weight:700;
+  color:var(--gold-lt); margin-bottom:10px; letter-spacing:0.05em;
+}
+.footer-brand p { font-size:13px; color:var(--sand); line-height:1.7; margin-bottom:16px; }
+.footer-col h4 {
+  font-family:'Cinzel',serif; font-size:12px; font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:14px;
+}
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:8px; }
+.footer-col ul li a {
+  font-size:13px; color:var(--sand); text-decoration:none;
+  transition:color 0.15s;
+}
+.footer-col ul li a:hover { color:var(--gold-lt); }
+.footer-bottom {
+  border-top:1px solid rgba(201,168,76,0.2);
+  padding-top:24px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:16px;
+}
+.footer-bottom .by {
+  font-size:13px; color:var(--sand); letter-spacing:0.04em;
+}
+.footer-bottom .by span { color:var(--gold-lt); font-weight:600; }
+.footer-twitter {
+  display:flex; align-items:center; gap:8px;
+  color:var(--gold-lt); text-decoration:none; font-size:13px; font-weight:600;
+  letter-spacing:0.04em;
+}
+.footer-twitter:hover { color:var(--gold); }
+
+/* QR Section */
+.qr-section {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2);
+  border-radius:var(--r2); padding:24px; text-align:center; width:160px;
+}
+.qr-section p { font-size:11px; color:var(--sand); margin-top:10px; letter-spacing:0.08em; text-transform:uppercase; }
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:1024px) {
+  .app-layout { grid-template-columns:1fr; }
+  .sidebar { display:none; }
+  .main { padding:28px 24px; }
+  .grid-3 { grid-template-columns:repeat(2,1fr); }
+  .grid-4 { grid-template-columns:repeat(2,1fr); }
+  .stat-row { grid-template-columns:repeat(2,1fr); }
+  .footer-grid { grid-template-columns:1fr; }
+}
+@media(max-width:600px) {
+  header { padding:40px 20px 36px; }
+  .search-wrap { padding:20px; }
+  .main-nav { padding:0 16px; }
+  .grid-2,.grid-3,.grid-4 { grid-template-columns:1fr; }
+  .disc-box { padding:28px 22px; }
+  header h1 { font-size:28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     DISCLAIMER MODAL
+============================================================ -->
+<div id="disclaimer-modal">
+  <div class="disc-box">
+    <span class="d-icon">🪷</span>
+    <h1>LEGAL DISCLAIMER</h1>
+    <div class="d-sub">Ayurveda Encyclopedia — by Aryan | Please read carefully</div>
+    <div class="disc-content">
+      <p><strong>RESEARCH & EDUCATIONAL PURPOSE ONLY:</strong> This Ayurveda Encyclopedia has been compiled purely for educational, research, and informational purposes. All knowledge presented here has been gathered, referenced, and synthesised from classical Ayurvedic texts including Charaka Samhita, Sushruta Samhita, Ashtanga Hridayam, Ashtanga Sangraha, Bhavaprakasha Nighantu, Dhanvantari Nighantu, Sharangadhara Samhita, Madhava Nidana, Kashyapa Samhita, and other published Ayurvedic literature, books, journals, and research papers.</p>
+      <p><strong>NOT MEDICAL ADVICE:</strong> The content in this encyclopedia — including but not limited to herbal remedies, dietary recommendations, lifestyle routines, Panchakarma procedures, formulations, and therapeutic suggestions — does NOT constitute medical advice, diagnosis, or treatment.</p>
+      <p><strong>MANDATORY CONSULTATION:</strong> Before consuming any herb, supplement, or Ayurvedic medicine; before undergoing any Ayurvedic procedure or Panchakarma; before changing your diet or lifestyle based on this information; or before stopping any prescribed medication — you MUST consult a qualified, licensed Ayurvedic physician (BAMS/MD Ayurveda) or your treating medical doctor.</p>
+      <p><strong>NO LIABILITY:</strong> The creator of this encyclopedia (Aryan / @EPureNest) accepts absolutely NO responsibility or liability for any harm, injury, illness, allergic reaction, adverse effect, or consequence arising from use of any information presented in this encyclopedia without proper medical consultation. You use this information entirely at your own risk.</p>
+      <p><strong>NOT A SUBSTITUTE:</strong> Ayurvedic knowledge presented here is not a substitute for professional medical care. In case of any medical emergency, please contact emergency services immediately.</p>
+    </div>
+    <div class="disc-checks">
+      <div class="chk-row"><input type="checkbox" id="dc1"><label for="dc1">I understand this is for research and educational purposes only — not medical advice.</label></div>
+      <div class="chk-row"><input type="checkbox" id="dc2"><label for="dc2">I will consult a qualified Ayurvedic doctor or physician before using any remedy or procedure.</label></div>
+      <div class="chk-row"><input type="checkbox" id="dc3"><label for="dc3">I accept full responsibility for my decisions and release the creator from all liability.</label></div>
+    </div>
+    <button class="disc-btn" id="disc-accept-btn" disabled onclick="acceptDisclaimer()">
+      I Understand & Accept — Enter the Encyclopedia
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================
+     TOP BAR
+============================================================ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <span class="lotus">🪷</span>
+    <span>Ayurveda Encyclopedia &nbsp;|&nbsp; by Aryan</span>
+  </div>
+  <a class="twitter-badge" href="https://twitter.com/EPureNest" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.766l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    @EPureNest
+  </a>
+  <div class="top-bar-right">Ancient Wisdom · Modern Research</div>
+</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow">🌿 The Complete Knowledge System</div>
+    <h1>AYURVEDA<br><span>ENCYCLOPEDIA</span></h1>
+    <div class="header-sub">आयुर्वेद — The Science of Life</div>
+    <div class="header-divider"></div>
+    <div class="header-by">Compiled & Curated by <strong>Aryan</strong> &nbsp;·&nbsp; @EPureNest</div>
+    <div class="header-divider"></div>
+    <div class="header-desc">
+      The world's most comprehensive digital encyclopedia of Ayurveda — covering Doshas, Herbs, Panchakarma, Diet, Daily Routines, Seasonal practices, Rasayanas, Classical formulations, and the ancient wisdom of 5,000 years of Vedic healing.
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SEARCH BAR
+============================================================ -->
+<div class="search-wrap">
+  <div class="search-inner">
+    <div class="search-label">🔍 Search the Encyclopedia — Free Forever</div>
+    <div class="search-box">
+      <input class="search-input" id="search-input" placeholder="Search herbs, treatments, conditions, doshas, formulations..." onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="search-btn" onclick="doSearch()">Search</button>
+    </div>
+    <div class="search-tags">
+      <span class="stag" onclick="quickSearch('Ashwagandha')">Ashwagandha</span>
+      <span class="stag" onclick="quickSearch('Vata Dosha')">Vata Dosha</span>
+      <span class="stag" onclick="quickSearch('Panchakarma')">Panchakarma</span>
+      <span class="stag" onclick="quickSearch('Triphala')">Triphala</span>
+      <span class="stag" onclick="quickSearch('Dinacharya')">Dinacharya</span>
+      <span class="stag" onclick="quickSearch('Rasayana')">Rasayana</span>
+      <span class="stag" onclick="quickSearch('Tulsi')">Tulsi</span>
+      <span class="stag" onclick="quickSearch('Chyawanprash')">Chyawanprash</span>
+      <span class="stag" onclick="quickSearch('Abhyanga')">Abhyanga</span>
+      <span class="stag" onclick="quickSearch('Agni')">Agni</span>
+    </div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <div class="nav-item active" onclick="nav('home')">🏠 Home</div>
+    <div class="nav-item" onclick="nav('intro')">📜 Introduction</div>
+    <div class="nav-item" onclick="nav('doshas')">🔮 Doshas</div>
+    <div class="nav-item" onclick="nav('herbs')">🌿 Herbs & Plants</div>
+    <div class="nav-item" onclick="nav('food')">🍽 Diet & Food</div>
+    <div class="nav-item" onclick="nav('routine')">🌅 Daily Routine</div>
+    <div class="nav-item" onclick="nav('treatments')">💆 Treatments</div>
+    <div class="nav-item" onclick="nav('panchakarma')">🧘 Panchakarma</div>
+    <div class="nav-item" onclick="nav('rasayana')">✨ Rasayana</div>
+    <div class="nav-item" onclick="nav('formulations')">⚗️ Formulations</div>
+    <div class="nav-item" onclick="nav('seasons')">🌦 Seasonal</div>
+    <div class="nav-item" onclick="nav('diseases')">🩺 Conditions</div>
+    <div class="nav-item" onclick="nav('yoga')">🧘 Yoga</div>
+    <div class="nav-item" onclick="nav('chat')">💬 Ask AI</div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN LAYOUT
+============================================================ -->
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-head">Ayurveda Encyclopedia</div>
+    <div class="sb-label">Foundations</div>
+    <div class="sb-item active" onclick="nav('home')"><span class="si">🏠</span>Home</div>
+    <div class="sb-item" onclick="nav('intro')"><span class="si">📜</span>Introduction & History</div>
+    <div class="sb-item" onclick="nav('doshas')"><span class="si">🔮</span>The Three Doshas</div>
+    <div class="sb-divider"></div>
+    <div class="sb-label">Knowledge Base</div>
+    <div class="sb-item" onclick="nav('herbs')"><span class="si">🌿</span>Herbs & Medicinal Plants</div>
+    <div class="sb-item" onclick="nav('food')"><span class="si">🍽</span>Diet, Food & Nutrition</div>
+    <div class="sb-item" onclick="nav('routine')"><span class="si">🌅</span>Daily Routine (Dinacharya)</div>
+    <div class="sb-item" onclick="nav('seasons')"><span class="si">🌦</span>Seasonal Routine (Ritucharya)</div>
+    <div class="sb-divider"></div>
+    <div class="sb-label">Therapies</div>
+    <div class="sb-item" onclick="nav('treatments')"><span class="si">💆</span>Ayurvedic Treatments</div>
+    <div class="sb-item" onclick="nav('panchakarma')"><span class="si">🧘</span>Panchakarma</div>
+    <div class="sb-item" onclick="nav('rasayana')"><span class="si">✨</span>Rasayana (Rejuvenation)</div>
+    <div class="sb-item" onclick="nav('formulations')"><span class="si">⚗️</span>Classical Formulations</div>
+    <div class="sb-divider"></div>
+    <div class="sb-label">Health & Wellness</div>
+    <div class="sb-item" onclick="nav('diseases')"><span class="si">🩺</span>Conditions & Remedies</div>
+    <div class="sb-item" onclick="nav('yoga')"><span class="si">🧘</span>Yoga & Pranayama</div>
+    <div class="sb-divider"></div>
+    <div class="sb-item" onclick="nav('chat')"><span class="si">💬</span>Ask AI — Free Forever</div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- ======================================================
+         HOME PANEL
+    ====================================================== -->
+    <div class="panel active" id="panel-home">
+      <div class="ph">
+        <div class="ph-crumb">Welcome</div>
+        <h2>The Complete Ayurveda Encyclopedia</h2>
+        <div class="gold-line"></div>
+        <p>5,000 years of the world's oldest medical system — comprehensively documented for modern seekers of health and wisdom.</p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-num">5000+</div><div class="stat-label">Years of Wisdom</div></div>
+        <div class="stat-card"><div class="stat-num">700+</div><div class="stat-label">Medicinal Herbs</div></div>
+        <div class="stat-card"><div class="stat-num">8</div><div class="stat-label">Branches of Medicine</div></div>
+        <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Free Forever</div></div>
+      </div>
+
+      <div class="alert gold"><span class="alert-icon">⚠️</span><div><strong>Research Tool Only:</strong> All content is compiled from classical Ayurvedic texts for educational purposes. Consult a qualified Ayurvedic physician before any treatment, herb, or dietary change.</div></div>
+
+      <div class="grid-3" style="margin-bottom:24px;">
+        <div class="card clickable" onclick="nav('doshas')">
+          <div class="card-icon">🔮</div>
+          <h3>The Three Doshas</h3>
+          <p>Vata, Pitta and Kapha — the three biological energies that govern all physical and mental processes.</p>
+          <span class="card-tag">Foundation</span>
+        </div>
+        <div class="card clickable" onclick="nav('herbs')">
+          <div class="card-icon">🌿</div>
+          <h3>Herbs & Plants</h3>
+          <p>700+ medicinal plants — properties, indications, preparations, doses and classical uses from ancient texts.</p>
+          <span class="card-tag">Dravyaguna</span>
+        </div>
+        <div class="card clickable" onclick="nav('panchakarma')">
+          <div class="card-icon">🧘</div>
+          <h3>Panchakarma</h3>
+          <p>The five classical detoxification and rejuvenation therapies at the core of Ayurvedic clinical practice.</p>
+          <span class="card-tag">Shodana Chikitsa</span>
+        </div>
+        <div class="card clickable" onclick="nav('food')">
+          <div class="card-icon">🍽</div>
+          <h3>Diet & Nutrition</h3>
+          <p>Ahara Vidhi — the science of eating according to your constitution, season, age and digestive fire.</p>
+          <span class="card-tag">Ahara</span>
+        </div>
+        <div class="card clickable" onclick="nav('routine')">
+          <div class="card-icon">🌅</div>
+          <h3>Daily Routine</h3>
+          <p>Dinacharya — the ideal daily schedule that aligns human biology with natural rhythms for optimal health.</p>
+          <span class="card-tag">Dinacharya</span>
+        </div>
+        <div class="card clickable" onclick="nav('rasayana')">
+          <div class="card-icon">✨</div>
+          <h3>Rasayana</h3>
+          <p>The ancient science of rejuvenation, longevity and anti-ageing — including Chyawanprash and Amalaki.</p>
+          <span class="card-tag">Rejuvenation</span>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <div class="quote-text">"Hitahitam sukham duhkham ayustasya hitahitam, manam cha tachcha yatroktam ayurvedah sa uchyate."</div>
+        <div class="quote-source">Charaka Samhita, Sutrasthana 1.41 — The science that deals with beneficial and harmful, happy and unhappy aspects of life is Ayurveda.</div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         INTRODUCTION PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-intro">
+      <div class="ph">
+        <div class="ph-crumb">Foundations</div>
+        <h2>Introduction to Ayurveda</h2>
+        <div class="gold-line"></div>
+        <p>आयुर्वेद — Ayurveda means "The Science of Life" (Ayur = life, Veda = knowledge/science). It is the world's oldest holistic healing system, originating in ancient India over 5,000 years ago.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Origins & History</h3>
+        <p>Ayurveda traces its origins to the Atharva Veda, one of the four sacred Vedas of ancient India. According to tradition, the knowledge was revealed by Brahma to Daksha Prajapati, then passed to the Ashwins, Indra, and eventually to the sages Punarvasu Atreya and Dhanvantari who systematised it into the medical system we know today.</p>
+        <p>The two primary classical texts are the <strong>Charaka Samhita</strong> (internal medicine, compiled ~300 BCE), and the <strong>Sushruta Samhita</strong> (surgery, ~600 BCE). The <strong>Ashtanga Hridayam</strong> by Vagbhata (~7th century CE) synthesised both schools. Together these are called the <em>Brihatrayi</em> — the Great Trio.</p>
+        <h4>Eight Branches (Ashtanga Ayurveda)</h4>
+        <ul>
+          <li>Kaya Chikitsa — Internal medicine, treatment of the whole body</li>
+          <li>Bala Chikitsa (Kaumarabhritya) — Paediatrics and obstetrics</li>
+          <li>Graha Chikitsa — Psychiatry, mental health, possession disorders</li>
+          <li>Shalakya Tantra — ENT, ophthalmology, dentistry (above the neck)</li>
+          <li>Shalya Tantra — Surgery (Sushruta performed rhinoplasty 2600 years ago)</li>
+          <li>Agada Tantra — Toxicology, antidotes to poisons</li>
+          <li>Rasayana Tantra — Rejuvenation, anti-ageing, immunology</li>
+          <li>Vajikarana Tantra — Aphrodisiology, reproductive medicine</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Core Philosophical Foundations</h3>
+        <h4>Panchamahabhuta — Five Great Elements</h4>
+        <p>All matter in the universe, including the human body, is composed of five fundamental elements:</p>
+        <ul>
+          <li>Akasha (Space/Ether) — The space within and between all things; governs sound and communication</li>
+          <li>Vayu (Air) — Movement, breath, nervous system, all motion in the body</li>
+          <li>Agni (Fire) — Transformation, digestion, metabolism, intelligence, vision</li>
+          <li>Jala (Water) — Fluidity, cohesion, plasma, blood, mucus, all body fluids</li>
+          <li>Prithvi (Earth) — Solidity, structure, bones, muscles, teeth, nails, skin</li>
+        </ul>
+        <h4>Tridosha Theory</h4>
+        <p>The Five Elements combine to form three biological forces — Vata (Air + Space), Pitta (Fire + Water), and Kapha (Earth + Water) — known as the Tridoshas. These govern all physiological and psychological functions. Disease arises when doshas are imbalanced; health is the state of their harmonious equilibrium.</p>
+        <h4>Sapta Dhatu — Seven Body Tissues</h4>
+        <ul>
+          <li>Rasa (Plasma, lymph) — Nourishment, first tissue formed from digested food</li>
+          <li>Rakta (Blood) — Oxygenation, life force, colour</li>
+          <li>Mamsa (Muscle tissue) — Movement, body shape, strength</li>
+          <li>Meda (Adipose/Fat tissue) — Lubrication, insulation, energy reserve</li>
+          <li>Asthi (Bone tissue) — Structure, support, protection</li>
+          <li>Majja (Bone marrow, nervous tissue) — Filling of bones, neural function</li>
+          <li>Shukra/Artava (Reproductive tissue) — Procreation, vitality, immunity</li>
+        </ul>
+        <h4>Agni — Digestive Fire</h4>
+        <p>Agni (metabolic fire) is arguably the most important concept in Ayurvedic medicine. The primary form is Jatharagni (gastric fire). Balanced Agni (Sama Agni) produces healthy tissues. There are four states: Sama (balanced), Vishama (irregular — Vata), Tikshna (sharp — Pitta), and Manda (slow — Kapha). Most Ayurvedic treatment aims at correcting Agni first.</p>
+        <h4>Ama — Metabolic Toxins</h4>
+        <p>When Agni is impaired, incompletely digested food creates Ama — a sticky, toxic substance that clogs the channels (Srotas) and is the root cause of most disease according to Ayurveda.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Classical Texts of Ayurveda</h3>
+        <ul>
+          <li><strong>Charaka Samhita</strong> — ~300 BCE. 8 Sthanas, 120 chapters. Internal medicine focus. Most authoritative text on Kayachikitsa.</li>
+          <li><strong>Sushruta Samhita</strong> — ~600 BCE. Surgical techniques, anatomy, 1120 diseases, 700 medicinal plants, 121 surgical instruments.</li>
+          <li><strong>Ashtanga Hridayam</strong> — Vagbhata, 7th century CE. Synthesis of Charaka and Sushruta schools.</li>
+          <li><strong>Ashtanga Sangraha</strong> — Also by Vagbhata. More elaborate version of Ashtanga Hridayam.</li>
+          <li><strong>Madhava Nidana</strong> — 7th–9th century CE. Definitive work on diagnosis and pathology.</li>
+          <li><strong>Sharangadhara Samhita</strong> — 13th–14th century CE. Pharmaceutical preparations, pulse diagnosis, formulations.</li>
+          <li><strong>Bhavaprakasha</strong> — 16th century CE. Materia medica, 500+ herbs, food items, minerals.</li>
+          <li><strong>Dhanvantari Nighantu</strong> — Classical lexicon of medicinal substances.</li>
+          <li><strong>Raja Nighantu</strong> — Comprehensive drug dictionary with synonyms and properties.</li>
+          <li><strong>Kashyapa Samhita</strong> — Paediatrics, obstetrics, gynaecology.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         DOSHAS PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-doshas">
+      <div class="ph">
+        <div class="ph-crumb">Foundations</div>
+        <h2>The Three Doshas</h2>
+        <div class="gold-line"></div>
+        <p>Vata, Pitta and Kapha are the three bio-energetic forces derived from the Panchamahabhutas. They govern every physiological, psychological and emotional function in the human body.</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:28px;">
+        <div class="dosha-card vata">
+          <div class="dosha-name">VATA</div>
+          <div class="dosha-sanskrit">वात — Wind & Space</div>
+          <div class="dosha-elements">
+            <span class="dosha-el">🌬 Air</span>
+            <span class="dosha-el">🌌 Space</span>
+          </div>
+          <p style="font-size:13px;color:#3a4a8a;line-height:1.65;"><strong>Qualities:</strong> Dry, light, cold, rough, subtle, mobile, clear. Governs all movement in the body — breathing, circulation, nerve impulses, elimination. Seat: Colon, pelvic region, bones, skin, ears, thighs.</p>
+        </div>
+        <div class="dosha-card pitta">
+          <div class="dosha-name">PITTA</div>
+          <div class="dosha-sanskrit">पित्त — Fire & Water</div>
+          <div class="dosha-elements">
+            <span class="dosha-el">🔥 Fire</span>
+            <span class="dosha-el">💧 Water</span>
+          </div>
+          <p style="font-size:13px;color:#c14020;line-height:1.65;"><strong>Qualities:</strong> Hot, sharp, light, liquid, oily, spreading, malodorous. Governs transformation — digestion, metabolism, intelligence, vision, skin colour, body temperature. Seat: Small intestine, stomach, liver, spleen, blood, skin, eyes.</p>
+        </div>
+        <div class="dosha-card kapha">
+          <div class="dosha-name">KAPHA</div>
+          <div class="dosha-sanskrit">कफ — Earth & Water</div>
+          <div class="dosha-elements">
+            <span class="dosha-el">🌍 Earth</span>
+            <span class="dosha-el">💧 Water</span>
+          </div>
+          <p style="font-size:13px;color:#2a6a4a;line-height:1.65;"><strong>Qualities:</strong> Heavy, slow, cold, oily, smooth, dense, soft, stable, cloudy, sticky. Governs structure and lubrication — immunity, growth, strength, memory, love. Seat: Chest, lungs, throat, head, sinuses, mouth, stomach, joints.</p>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3>Vata Dosha — Detailed</h3>
+        <h4>Five Sub-Doshas of Vata</h4>
+        <ul>
+          <li><strong>Prana Vata</strong> — Governs: Breath, swallowing, sneezing, spitting, belching. Located in: Head, chest. Disorders: Anxiety, breathlessness, hiccup, neurological conditions.</li>
+          <li><strong>Udana Vata</strong> — Governs: Upward movement, speech, effort, memory, complexion. Located in: Throat, chest, navel. Disorders: Speech disorders, thyroid, vertigo.</li>
+          <li><strong>Samana Vata</strong> — Governs: Digestive movements, absorption. Located in: Small intestine. Disorders: Malabsorption, digestive issues.</li>
+          <li><strong>Apana Vata</strong> — Governs: Downward elimination — urination, defaecation, menstruation, childbirth. Located in: Colon, pelvis. Disorders: Constipation, menstrual irregularity, prostate issues.</li>
+          <li><strong>Vyana Vata</strong> — Governs: Circulation, heart function, perspiration, movement throughout body. Located in: Heart, pervades whole body. Disorders: Circulation problems, hypertension.</li>
+        </ul>
+        <h4>Vata Imbalance Signs</h4>
+        <ul>
+          <li>Physical: Dry skin, cracking joints, constipation, weight loss, cold extremities, insomnia, irregular appetite, gas, bloating</li>
+          <li>Mental: Anxiety, fear, nervousness, indecisiveness, scattered thinking, memory problems, restlessness</li>
+        </ul>
+        <h4>Vata Balancing</h4>
+        <ul>
+          <li>Diet: Warm, oily, heavy, sweet, sour, salty foods. Ghee, sesame oil, warm milk, root vegetables, rice, wheat, nuts</li>
+          <li>Herbs: Ashwagandha, Shatavari, Bala, Vidari, Dashamoola, Licorice, Ginger</li>
+          <li>Lifestyle: Regular warm oil massage (Abhyanga), warmth, regular routine, rest, meditation</li>
+          <li>Avoid: Cold, dry, raw, light foods; excessive travel, screen time, irregular sleep</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Pitta Dosha — Detailed</h3>
+        <h4>Five Sub-Doshas of Pitta</h4>
+        <ul>
+          <li><strong>Pachaka Pitta</strong> — Primary digestive fire in the small intestine. Digests and transforms food. Root of all other Pittas.</li>
+          <li><strong>Ranjaka Pitta</strong> — Located in liver, spleen, stomach. Gives colour to blood, bile, stool.</li>
+          <li><strong>Sadhaka Pitta</strong> — Located in heart. Enables achievement of goals, intelligence, memory, emotions.</li>
+          <li><strong>Alochaka Pitta</strong> — Located in eyes. Enables vision and processing of visual information.</li>
+          <li><strong>Bhrajaka Pitta</strong> — Located in skin. Gives lustre, colour; processes substances applied topically.</li>
+        </ul>
+        <h4>Pitta Imbalance Signs</h4>
+        <ul>
+          <li>Physical: Acidity, acid reflux, ulcers, inflammation, skin rashes, acne, excessive hunger, diarrhoea, fever, burning sensations, premature greying, hair loss</li>
+          <li>Mental: Anger, irritability, criticism, perfectionism, competitiveness, jealousy, impatience</li>
+        </ul>
+        <h4>Pitta Balancing</h4>
+        <ul>
+          <li>Diet: Cool, sweet, bitter, astringent foods. Coconut, milk, ghee, sweet fruits, green vegetables, coriander, mint, fennel</li>
+          <li>Herbs: Shatavari, Amalaki, Guduchi, Brahmi, Neem, Sandalwood, Aloe vera, Turmeric</li>
+          <li>Lifestyle: Cooling activities, moonlight walks, swimming, creative work, rest, minimise conflict</li>
+          <li>Avoid: Spicy, hot, sour, oily foods; alcohol, excessive sun, competitive pressure</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Kapha Dosha — Detailed</h3>
+        <h4>Five Sub-Doshas of Kapha</h4>
+        <ul>
+          <li><strong>Kledaka Kapha</strong> — Located in stomach. Moistens food, protects stomach lining, initiates digestion.</li>
+          <li><strong>Avalambaka Kapha</strong> — Located in heart and chest. Supports heart function, provides strength to back and chest.</li>
+          <li><strong>Bodhaka Kapha</strong> — Located in mouth and tongue. Enables taste perception, lubricates mouth.</li>
+          <li><strong>Tarpaka Kapha</strong> — Located in head, sinuses. Nourishes sense organs, keeps them moist.</li>
+          <li><strong>Sleshaka Kapha</strong> — Located in joints. Lubricates all joints, maintains their integrity.</li>
+        </ul>
+        <h4>Kapha Imbalance Signs</h4>
+        <ul>
+          <li>Physical: Weight gain, water retention, congestion, mucus overproduction, slow digestion, lethargy, excessive sleep, cold, cough, diabetes, high cholesterol</li>
+          <li>Mental: Attachment, depression, greed, possessiveness, stubbornness, excessive sentimentality, mental fog</li>
+        </ul>
+        <h4>Kapha Balancing</h4>
+        <ul>
+          <li>Diet: Light, dry, warm, spicy, bitter, pungent foods. Ginger, black pepper, honey (not heated), legumes, bitter greens, millet, barley</li>
+          <li>Herbs: Trikatu (three peppers), Punarnava, Guggulu, Bibhitaki, Chitrak, Vacha, Kutki</li>
+          <li>Lifestyle: Vigorous exercise, dry massage (Udvartana), early rising, fasting, stimulating activities</li>
+          <li>Avoid: Heavy, sweet, oily, cold, dairy-rich foods; oversleeping, daytime naps, sedentary lifestyle</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         HERBS PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-herbs">
+      <div class="ph">
+        <div class="ph-crumb">Dravyaguna Shastra</div>
+        <h2>Herbs & Medicinal Plants</h2>
+        <div class="gold-line"></div>
+        <p>Ayurveda uses over 700 plant species in its materia medica. Each plant is understood through its Rasa (taste), Guna (quality), Virya (potency), Vipaka (post-digestive effect), and Prabhava (special action).</p>
+      </div>
+
+      <div class="alert info"><span class="alert-icon">🌿</span><div>All herbs below are presented for educational research only. Dosages, preparations, and indications must be prescribed by a qualified Ayurvedic physician. Self-medication can be dangerous.</div></div>
+
+      <div class="herb-grid">
+        <div class="herb-card">
+          <div class="herb-name">Ashwagandha</div>
+          <div class="herb-sanskrit">Withania somnifera — अश्वगंधा</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-kapha">K-</span><span class="herb-tag ht-pitta">P+</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Bitter, astringent, sweet. <strong>Virya:</strong> Warming. <strong>Actions:</strong> Adaptogen, nervine tonic, anti-inflammatory, aphrodisiac, immune modulator. <strong>Uses:</strong> Anxiety, fatigue, insomnia, debility, sexual weakness, arthritis, hypothyroidism, sports performance. One of the most important Rasayana herbs.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Shatavari</div>
+          <div class="herb-sanskrit">Asparagus racemosus — शतावरी</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-pitta">P-</span><span class="herb-tag ht-kapha">K+</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Sweet, bitter. <strong>Virya:</strong> Cooling. <strong>Actions:</strong> Female reproductive tonic, galactagogue, demulcent, anti-ulcer, immunomodulator, adaptogen. <strong>Uses:</strong> Infertility, menopause, PMS, gastric ulcers, low milk production, UTI, dehydration, convalescence.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Brahmi</div>
+          <div class="herb-sanskrit">Bacopa monnieri — ब्राह्मी</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-pitta">P-</span><span class="herb-tag ht-kapha">K-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Bitter, sweet, astringent. <strong>Virya:</strong> Cooling. <strong>Actions:</strong> Medhya Rasayana (brain tonic), nootropic, anxiolytic, anti-epileptic, diuretic. <strong>Uses:</strong> Memory enhancement, ADHD, anxiety, epilepsy, hair growth, skin diseases, thyroid. Tridoshic.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Amalaki (Amla)</div>
+          <div class="herb-sanskrit">Phyllanthus emblica — आमलकी</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-pitta">P-</span><span class="herb-tag ht-kapha">K-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Five tastes (all except salty). <strong>Virya:</strong> Cooling. <strong>Actions:</strong> Richest natural Vitamin C source, Rasayana, anti-ageing, digestive, haemostatic. <strong>Uses:</strong> Pitta disorders, acidity, eye health, hair growth, immunity, diabetes, cholesterol, anaemia. Most versatile Rasayana herb.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Turmeric (Haridra)</div>
+          <div class="herb-sanskrit">Curcuma longa — हरिद्रा</div>
+          <div class="herb-tags"><span class="herb-tag ht-kapha">K-</span><span class="herb-tag ht-pitta">P-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Bitter, pungent, astringent. <strong>Virya:</strong> Heating. <strong>Actions:</strong> Anti-inflammatory, antimicrobial, blood purifier, wound healer, anti-diabetic, liver protective. <strong>Uses:</strong> Arthritis, skin diseases, diabetes, liver disorders, digestive issues, wounds, cancer prevention. Used in cooking as medicine.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Tulsi (Holy Basil)</div>
+          <div class="herb-sanskrit">Ocimum tenuiflorum — तुलसी</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-kapha">K-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Pungent, bitter. <strong>Virya:</strong> Heating. <strong>Actions:</strong> Adaptogen, antibacterial, antiviral, expectorant, anti-pyretic, carminative, immunomodulator. <strong>Uses:</strong> Colds, coughs, fever, stress, infections, malaria, skin disorders, dental health. Sacred in Hindu tradition.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Guduchi (Giloy)</div>
+          <div class="herb-sanskrit">Tinospora cordifolia — गुडूची</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-pitta">P-</span><span class="herb-tag ht-kapha">K-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Bitter, astringent, sweet. <strong>Virya:</strong> Heating. <strong>Actions:</strong> Immunomodulator, anti-pyretic, anti-diabetic, liver protective, Rasayana, anti-arthritic. <strong>Uses:</strong> Chronic fever, diabetes, liver disease, gout, rheumatoid arthritis, immunity, post-COVID recovery. Called "Amrita" (nectar).</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Triphala</div>
+          <div class="herb-sanskrit">Three fruits — त्रिफला</div>
+          <div class="herb-tags"><span class="herb-tag ht-general">Tridoshic</span></div>
+          <div class="herb-desc"><strong>Composition:</strong> Amalaki + Bibhitaki + Haritaki in equal parts. <strong>Actions:</strong> Gentle laxative, antioxidant, anti-ageing, eye tonic, digestive, detoxifying. <strong>Uses:</strong> Constipation, eye disorders, skin health, weight management, diabetes, immunity. Most widely used Ayurvedic formulation.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Neem (Nimba)</div>
+          <div class="herb-sanskrit">Azadirachta indica — निम्ब</div>
+          <div class="herb-tags"><span class="herb-tag ht-pitta">P-</span><span class="herb-tag ht-kapha">K-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Bitter. <strong>Virya:</strong> Cooling. <strong>Actions:</strong> Blood purifier, antibacterial, antifungal, anti-parasitic, anti-diabetic, wound healer. <strong>Uses:</strong> Skin diseases, malaria, dental hygiene, diabetes, fever, worm infestations. Entire tree is medicinal.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Ginger (Shunthi/Adrak)</div>
+          <div class="herb-sanskrit">Zingiber officinale — शुण्ठी</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-kapha">K-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Pungent. <strong>Virya:</strong> Heating. <strong>Actions:</strong> Digestive, carminative, anti-nausea, anti-inflammatory, expectorant, circulation enhancer. <strong>Uses:</strong> Nausea, vomiting, indigestion, coughs, colds, arthritis, motion sickness. Called "Vishwabheshaja" — universal medicine.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Shankhpushpi</div>
+          <div class="herb-sanskrit">Convolvulus pluricaulis — शंखपुष्पी</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-pitta">P-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Astringent, sweet, bitter. <strong>Virya:</strong> Cooling. <strong>Actions:</strong> Medhya Rasayana, nootropic, anxiolytic, thyroid modulator, anti-hypertensive. <strong>Uses:</strong> Memory, concentration, anxiety, insomnia, hyperthyroidism, epilepsy, stress. Paired with Brahmi for brain health.</div>
+        </div>
+        <div class="herb-card">
+          <div class="herb-name">Guggulu</div>
+          <div class="herb-sanskrit">Commiphora wightii — गुग्गुलु</div>
+          <div class="herb-tags"><span class="herb-tag ht-vata">V-</span><span class="herb-tag ht-kapha">K-</span></div>
+          <div class="herb-desc"><strong>Rasa:</strong> Pungent, bitter, astringent, sweet. <strong>Virya:</strong> Heating. <strong>Actions:</strong> Anti-inflammatory, lipid-lowering, anti-arthritic, thyroid stimulant, detoxifying. <strong>Uses:</strong> Arthritis, high cholesterol, obesity, hypothyroidism, skin diseases. Used in 28+ classical formulations.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         FOOD PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-food">
+      <div class="ph">
+        <div class="ph-crumb">Ahara Vidhi</div>
+        <h2>Diet, Food & Nutrition</h2>
+        <div class="gold-line"></div>
+        <p>In Ayurveda, food is medicine — Ahara is the first of the three pillars of life (Traya Upastambha), along with Sleep and Brahmacharya. What you eat, when you eat, how you eat, and how you combine foods determines your health.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Ahara Vidhi Visheshayatana — Rules of Eating</h3>
+        <ul>
+          <li><strong>Ushnam Ashniyat</strong> — Always eat warm food. Cold food diminishes Agni and creates Ama.</li>
+          <li><strong>Snigdham Ashniyat</strong> — Eat food with sufficient fat/oil. Dry food disturbs Vata.</li>
+          <li><strong>Matravat Ashniyat</strong> — Eat the right quantity — fill half stomach with food, quarter with water, leave quarter empty for digestion.</li>
+          <li><strong>Jirneashniyat</strong> — Eat only when the previous meal is digested (approximately 4-6 hours).</li>
+          <li><strong>Aviruddham Ashniyat</strong> — Do not eat incompatible food combinations (Viruddha Ahara).</li>
+          <li><strong>Ishtadeshe</strong> — Eat in a pleasant, comfortable environment.</li>
+          <li><strong>Na Atidrutam</strong> — Do not eat too fast — chew thoroughly.</li>
+          <li><strong>Na Ati Vilambitam</strong> — Do not eat too slowly — food becomes cold and digestion is impaired.</li>
+          <li><strong>Tanmanabhunjita</strong> — Eat with full attention on food. No distractions, screens, or arguments while eating.</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Viruddha Ahara — Incompatible Food Combinations</h3>
+        <p>According to Charaka Samhita, combining these foods creates toxins (Ama) in the body:</p>
+        <ul>
+          <li>Milk + Fish — Most serious incompatibility. Causes skin diseases, vitiligo.</li>
+          <li>Milk + Sour fruits — Causes bloating, indigestion, skin disorders.</li>
+          <li>Honey + Ghee in equal proportions — Toxic combination (use in different amounts is fine).</li>
+          <li>Honey + Warm water/food — Heating honey above 40°C makes it toxic; use only at room temperature or below.</li>
+          <li>Milk + Salt — Causes skin diseases.</li>
+          <li>Curd + Milk — Both are heavy; together they ferment and create Ama.</li>
+          <li>Fruit + Milk — Except ripe sweet mango. Most fruits are incompatible with milk.</li>
+          <li>Cold water after hot foods — Disrupts digestion and Agni.</li>
+          <li>Radish + Milk, banana, raisins, black gram — Various incompatibilities documented.</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Diet by Dosha Type</h3>
+        <div style="overflow-x:auto;">
+          <table class="food-table">
+            <tr><th>Food Category</th><th>Vata</th><th>Pitta</th><th>Kapha</th></tr>
+            <tr><td>Grains</td><td class="good">Rice, Wheat, Oats</td><td class="good">Basmati rice, Barley, Oats</td><td class="good">Barley, Millet, Corn, Rye</td></tr>
+            <tr><td>Dairy</td><td class="good">Warm milk, Ghee, Butter</td><td class="good">Ghee, Milk, Unsalted butter</td><td class="avoid">Minimise. Ghee in small amounts</td></tr>
+            <tr><td>Vegetables</td><td class="good">Root vegetables, Cooked. Avoid raw</td><td class="good">Leafy greens, Cucumber, Broccoli</td><td class="good">Most vegetables, especially bitter</td></tr>
+            <tr><td>Fruits</td><td class="good">Sweet ripe fruits, Avocado, Banana</td><td class="good">Sweet fruits, Coconut, Pomegranate</td><td class="mod">Astringent fruits, Apples, Pears</td></tr>
+            <tr><td>Proteins</td><td class="good">Eggs, Fish, Chicken, Mung dal</td><td class="good">Mung dal, Tofu, Chickpeas</td><td class="good">Legumes, White fish</td></tr>
+            <tr><td>Oils</td><td class="good">Sesame, Almond, Olive</td><td class="good">Coconut, Sunflower, Ghee</td><td class="mod">Flaxseed, Sunflower (minimal)</td></tr>
+            <tr><td>Spices</td><td class="good">Ginger, Cumin, Cardamom, Cinnamon</td><td class="good">Coriander, Fennel, Turmeric, Mint</td><td class="good">Ginger, Black pepper, Trikatu, Mustard</td></tr>
+            <tr><td>Sweeteners</td><td class="good">All natural sweeteners</td><td class="good">Coconut sugar, Maple, Rice syrup</td><td class="good">Raw honey only (not heated)</td></tr>
+            <tr><td>Avoid</td><td class="avoid">Dry, cold, raw foods. Caffeine</td><td class="avoid">Spicy, fermented, alcohol, red meat</td><td class="avoid">Cold, oily, sweet, heavy, dairy excess</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3>Pathya — Therapeutic Foods by Condition</h3>
+        <h4>For Digestive Health (Agni)</h4>
+        <ul>
+          <li>Trikatu (Ginger + Black pepper + Long pepper) — Kindles digestive fire, removes Ama</li>
+          <li>Warm water with ginger — Best digestive drink according to Charaka</li>
+          <li>Mung dal khichadi (rice + split mung) — Easiest food to digest; ideal during illness</li>
+          <li>Buttermilk (Takra) — "He who uses Takra daily does not suffer from disease" — Charaka</li>
+          <li>Haritaki — Digestive, laxative, tones digestive tract</li>
+        </ul>
+        <h4>For Immunity (Ojas)</h4>
+        <ul>
+          <li>Chyawanprash — The classic Rasayana for immunity</li>
+          <li>Warm milk with Ashwagandha and saffron</li>
+          <li>Amalaki (fresh or as Chyawanprash) — Highest Vitamin C</li>
+          <li>Ghee — Builds Ojas; cooling, nourishing</li>
+          <li>Saffron (Kumkuma) in warm milk — Builds Ojas, enhances complexion</li>
+        </ul>
+        <h4>Brain & Memory (Medhya Ahara)</h4>
+        <ul>
+          <li>Brahmi in warm milk</li>
+          <li>Almonds — Soaked overnight, peeled (reduces Pitta)</li>
+          <li>Walnuts — Brain-shaped; Vata nourishing</li>
+          <li>Saffron milk</li>
+          <li>Ghee — Promotes intelligence; lubricates brain channels</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         ROUTINE PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-routine">
+      <div class="ph">
+        <div class="ph-crumb">Dinacharya</div>
+        <h2>Daily Routine — Dinacharya</h2>
+        <div class="gold-line"></div>
+        <p>Charaka Samhita states: "A person who follows Dinacharya attains longevity, health, intelligence, fame, complexion, strength, and all living beings love him." The daily routine aligns human biology with the rhythms of nature.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">4:00 – 6:00 AM — Brahma Muhurta</div>
+          <div class="tl-title">Wake Up — Brahma Muhurta</div>
+          <div class="tl-desc">Awaken 96 minutes before sunrise — the "Creator's Hour." The atmosphere is rich in prana, the mind is fresh and calm. This is ideal for meditation, study, and spiritual practice. Lie quietly for a moment and express gratitude. Avoid waking in Kapha time (6–10am) as it causes heaviness and lethargy.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">5:30 AM</div>
+          <div class="tl-title">Ushapana — Water Therapy</div>
+          <div class="tl-desc">Drink 2-4 cups of warm water (copper vessel water stored overnight is ideal) on an empty stomach. This flushes the kidneys, stimulates bowel movement, hydrates cells, and activates digestion. Classical texts recommend drinking until you feel the urge to eliminate.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">6:00 AM</div>
+          <div class="tl-title">Mala Visarjana — Elimination</div>
+          <div class="tl-desc">Natural elimination of bowel and bladder. Ideally happens naturally without straining. Constipation is the root of many diseases in Ayurveda. Haritaki, Triphala, or warm water with ghee can assist. Never suppress natural urges — this is a cardinal rule in Ayurveda.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">6:15 AM</div>
+          <div class="tl-title">Danta Dhavana — Oral Hygiene</div>
+          <div class="tl-desc">Brush teeth with herbal twigs (Neem, Licorice, Karanja) or herbal tooth powder. Follow with Jihva Nirlekhana (tongue scraping) with a copper or stainless steel scraper — removes Ama, activates digestive organs through tongue-organ connections. Then Kavala or Gandusha — oil pulling with sesame or coconut oil (5-20 minutes).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">6:30 AM</div>
+          <div class="tl-title">Nasya — Nasal Oiling</div>
+          <div class="tl-desc">Apply 2-3 drops of warm sesame oil or Anu taila in each nostril. The nose is the gateway to the head and brain. Daily Nasya lubricates nasal passages, improves voice, vision and clarity, and prevents sinus problems. "The nose is the door to the head" — Ashtanga Hridayam.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">6:45 AM</div>
+          <div class="tl-title">Abhyanga — Self-Oil Massage</div>
+          <div class="tl-desc">Warm oil self-massage of the entire body for 10-20 minutes before bathing. "Abhyanga should be resorted to daily. It wards off old age, exertion and Vata disorders. It improves eyesight, nourishes the body, increases longevity, induces sleep, and strengthens the skin." — Ashtanga Hridayam. Use sesame oil (Vata), coconut oil (Pitta), or mustard oil (Kapha).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">7:15 AM</div>
+          <div class="tl-title">Vyayama — Exercise</div>
+          <div class="tl-desc">Exercise to half capacity (Ardhashakti) — until you can no longer breathe through the nose easily. Best time is Vata/Kapha period (6-10am). Yoga, walking, swimming are most universally recommended. Vata types: gentle exercise. Pitta: cooling exercise. Kapha: vigorous exercise. Exercise should be adapted to age, season, and constitution.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">8:00 AM</div>
+          <div class="tl-title">Snana — Bathing</div>
+          <div class="tl-desc">Warm water bath (avoid cold shower for Vata types and in winter). Bath purifies the body, removes Abhyanga oil, increases Agni, clears fatigue, and refreshes the mind. Use herbal powders (chickpea flour, neem powder) instead of harsh chemical soaps where possible. Always wash head separately — do not use hot water on the head.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">8:30 AM</div>
+          <div class="tl-title">Breakfast — Prata Ahara</div>
+          <div class="tl-desc">Warm, light breakfast. Ideal: warm porridge, cooked grains, warm spiced milk, fresh fruit (eaten alone, not combined). Avoid cold cereal, fruit juices, smoothies (cold and raw — hard to digest). "Do not eat breakfast if not hungry" — the digestive fire from the previous night should be fully active first.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">12:00 – 1:00 PM</div>
+          <div class="tl-title">Lunch — Madhyahna Ahara (Main Meal)</div>
+          <div class="tl-desc">Largest meal of the day. Pitta time (10am-2pm) = digestive fire at peak. Sit down, eat warm freshly cooked food. Include all six tastes (sweet, sour, salty, pungent, bitter, astringent). Eat to 3/4 fullness. Drink warm water or warm spiced water (jeera/fennel) during meal. Rest for 10 minutes after eating — Vajrasana (thunderbolt pose) aids digestion.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">2:00 – 6:00 PM</div>
+          <div class="tl-title">Afternoon Work & Rest</div>
+          <div class="tl-desc">Productive work time. A short walk after lunch is beneficial. Avoid sleeping in the afternoon (except in summer or for elderly, children, debilitated). If tired, a 10-minute Shavasana or seated rest without sleep. Afternoon is ideal for creative work, learning, and physical activity for Pitta types.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">6:00 – 7:00 PM</div>
+          <div class="tl-title">Evening Practices</div>
+          <div class="tl-desc">Light walking or gentle yoga. Evening prayer or meditation. This is Vata time — creativity, reflection, spiritual practice. Avoid heavy exercise after sunset. A warm cup of herbal tea (ginger, cardamom, tulsi) is ideal. Review the day with gratitude.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">7:00 – 8:00 PM</div>
+          <div class="tl-title">Dinner — Sayam Ahara (Light)</div>
+          <div class="tl-desc">Light, warm, easily digestible dinner — eaten at least 3 hours before sleep. Soups, khichadi, light grains. Avoid heavy proteins, dairy (except warm milk), raw salads at night. "One who eats a light dinner is healthy, sleeps well, and lives long." — Charaka.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">9:30 PM</div>
+          <div class="tl-title">Warm Milk (Ksheerapana)</div>
+          <div class="tl-desc">Warm golden milk (with Ashwagandha, turmeric, cardamom, saffron) 30 minutes before sleep. Builds Ojas, promotes deep sleep, calms Vata. Gently massage the soles of feet with warm sesame oil before sleep for grounding and to promote sound sleep.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">10:00 PM</div>
+          <div class="tl-title">Nidra — Sleep</div>
+          <div class="tl-desc">Sleep by 10pm — before the Pitta period (10pm-2am). Sleeping during Pitta time causes the body to process and rejuvenate. Missing this window by staying awake past 11pm means the mind becomes active again (Pitta energy) and sleep quality suffers. Sleep on left side for better digestion. Avoid screens 1 hour before sleep.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         TREATMENTS PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-treatments">
+      <div class="ph">
+        <div class="ph-crumb">Chikitsa</div>
+        <h2>Ayurvedic Treatments</h2>
+        <div class="gold-line"></div>
+        <p>Ayurvedic treatment works on two main principles: Shodhana (purification/elimination) and Shamana (pacification/palliative). Treatment always addresses the root cause (Nidana), not just symptoms.</p>
+      </div>
+
+      <div class="treatment-card">
+        <div class="tc-head"><span class="tc-icon">🛢️</span><div><div class="tc-name">Abhyanga — Full Body Oil Massage</div><div class="tc-type">Bahya Snehana · External Oleation</div></div></div>
+        <div class="tc-body">Systematic warm oil massage using medicated oils appropriate to the patient's constitution. The therapist uses specific strokes that follow the direction of body hair and lymphatic flow. Duration: 45-60 minutes. Oils used include Bala Ashwagandha tailam (Vata), Brahmi coconut oil (Pitta), Mustard or Karpura tailam (Kapha). The heat of the massage liquifies Ama and moves it toward the digestive tract for elimination.</div>
+        <div class="tc-benefits"><span class="tc-ben">Anti-ageing</span><span class="tc-ben">Vata pacifying</span><span class="tc-ben">Improves circulation</span><span class="tc-ben">Nourishes tissues</span><span class="tc-ben">Induces sleep</span></div>
+      </div>
+
+      <div class="treatment-card">
+        <div class="tc-head"><span class="tc-icon">🍶</span><div><div class="tc-name">Shirodhara — Oil Stream on Forehead</div><div class="tc-type">Murdha Taila · Head Therapies</div></div></div>
+        <div class="tc-body">A continuous, rhythmic stream of warm medicated oil (or buttermilk, or medicated milk) is poured over the forehead (third eye area — Ajna chakra) for 40-60 minutes. The oil oscillates over a specific zone that stimulates the hypothalamus and pituitary via the trigeminal nerve. This profoundly calms the nervous system. Considered the most powerful treatment for Vata disorders of the mind. Oils: Brahmi taila, Ksheerabala taila, Chandanadi taila.</div>
+        <div class="tc-benefits"><span class="tc-ben">Stress & anxiety</span><span class="tc-ben">Insomnia</span><span class="tc-ben">PTSD</span><span class="tc-ben">Migraine</span><span class="tc-ben">Hair & scalp health</span><span class="tc-ben">Hypertension</span></div>
+      </div>
+
+      <div class="treatment-card">
+        <div class="tc-head"><span class="tc-icon">🍯</span><div><div class="tc-name">Kati Basti — Oil Bath for Lower Back</div><div class="tc-type">Targeted Basti · Regional Treatment</div></div></div>
+        <div class="tc-body">A dam of dough (typically black gram flour) is built on the lower back and filled with warm medicated oil that is maintained at a constant temperature. The oil deeply penetrates the muscles, fascia and vertebral joints of the lumbar region. Duration: 30-45 minutes. Used with oils like Mahanarayan taila, Ksheerabala taila, or Dhanwantaram taila. Highly effective for lumbar disc problems, spondylosis, and lower back pain.</div>
+        <div class="tc-benefits"><span class="tc-ben">Lower back pain</span><span class="tc-ben">Disc herniation</span><span class="tc-ben">Sciatica</span><span class="tc-ben">Lumbar spondylosis</span><span class="tc-ben">Muscle spasms</span></div>
+      </div>
+
+      <div class="treatment-card">
+        <div class="tc-head"><span class="tc-icon">🌿</span><div><div class="tc-name">Pinda Sweda — Herbal Bolus Massage</div><div class="tc-type">Bashpa Sweda · Sudation Therapy</div></div></div>
+        <div class="tc-body">Poultices (boluses) made of medicated rice (Shashtika shali), herbs, or sand are heated and applied rhythmically to the body. The most famous type is Navarakizhi — using Shashtika shali rice cooked in milk and herbal decoctions. The boluses are applied in synchronized strokes by two therapists. This is one of the most deeply nourishing treatments in Ayurveda — both oleating (snehana) and sudating (swedana) simultaneously.</div>
+        <div class="tc-benefits"><span class="tc-ben">Muscle wasting</span><span class="tc-ben">Arthritis</span><span class="tc-ben">Parkinson's</span><span class="tc-ben">Post-stroke</span><span class="tc-ben">Skin lustre</span><span class="tc-ben">Anti-ageing</span></div>
+      </div>
+
+      <div class="treatment-card">
+        <div class="tc-head"><span class="tc-icon">👁️</span><div><div class="tc-name">Netra Tarpana — Eye Rejuvenation</div><div class="tc-type">Shalakya Tantra · Eye Therapy</div></div></div>
+        <div class="tc-body">Dough rings are placed around the eyes and filled with warm ghee (usually Triphala ghee or plain cow's ghee). The patient is asked to blink eyes in the ghee for 5-15 minutes. The medicated ghee nourishes and strengthens the eye tissues, relieves strain, and improves vision. Ideal for digital eye strain, dry eyes, early cataracts, and general eye weakness. One of the most unique and effective eye treatments in any medical tradition.</div>
+        <div class="tc-benefits"><span class="tc-ben">Digital eye strain</span><span class="tc-ben">Dry eyes</span><span class="tc-ben">Glaucoma support</span><span class="tc-ben">Vision improvement</span><span class="tc-ben">Dark circles</span></div>
+      </div>
+
+      <div class="treatment-card">
+        <div class="tc-head"><span class="tc-icon">💨</span><div><div class="tc-name">Nasya — Nasal Administration</div><div class="tc-type">Panchakarma Subsidiary · Shalakya</div></div></div>
+        <div class="tc-body">Medicated oils, ghee, or herbal juices are administered through the nostrils after facial steam and massage. Five types: Navana (nutritive), Avapeedana (pressed juice), Dhmapana (powder blowing), Dhuma (smoking), Pratimarsha (daily). The nose is the gateway to the brain — Nasya directly impacts the nervous system, sinuses, and brain. Anu taila is the most commonly used Nasya oil for daily practice.</div>
+        <div class="tc-benefits"><span class="tc-ben">Sinusitis</span><span class="tc-ben">Migraine</span><span class="tc-ben">Hair loss</span><span class="tc-ben">Memory</span><span class="tc-ben">Voice quality</span><span class="tc-ben">Premature greying</span></div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PANCHAKARMA PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-panchakarma">
+      <div class="ph">
+        <div class="ph-crumb">Shodana Chikitsa</div>
+        <h2>Panchakarma</h2>
+        <div class="gold-line"></div>
+        <p>Panchakarma means "Five Actions" — the five classical bio-purification procedures that eliminate accumulated toxins from the deep tissues. It is the most powerful and complete detoxification system in Ayurveda. Always preceded by Purvakarma (preparatory procedures).</p>
+      </div>
+
+      <div class="alert warn"><span class="alert-icon">⚠️</span><div>Panchakarma procedures must ONLY be performed under the direct supervision of a qualified Ayurvedic physician. Improper administration can be dangerous. This information is for educational understanding only.</div></div>
+
+      <div class="section-block">
+        <h3>Purvakarma — Preparatory Procedures</h3>
+        <p>Before the main Panchakarma procedures, the body must be prepared over 3-7 days to liquefy and mobilise the doshas from their sites of accumulation into the digestive tract for elimination.</p>
+        <h4>Snehana — Oleation Therapy</h4>
+        <p>Internal: Increasing doses of medicated ghee taken on empty stomach for 3-7 days (Antara Snehana). External: Full body oil massage (Abhyanga). Lubricates the channels, loosens toxins from tissue, makes doshas mobile.</p>
+        <h4>Swedana — Sudation/Sweating Therapy</h4>
+        <p>After oleation, heat is applied to the body through steam box (Bashpa Sweda), herbal boluses, or hot water immersion. Heat opens channels, dilates vessels, mobilises loosened toxins further toward the digestive system.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>The Five Panchakarma Procedures</h3>
+        <h4>1. Vamana — Therapeutic Emesis</h4>
+        <p>Medicated vomiting to eliminate excess Kapha from the stomach and chest. Indications: Bronchial asthma, chronic sinusitis, psoriasis, diabetes, obesity, epilepsy, repeated tonsillitis. Medicines used: Licorice + honey + Vacha, Madanaphala, Neem decoction. CONTRAINDICATED: Elderly, children under 12, pregnancy, cardiac patients, severe debility.</p>
+        <h4>2. Virechana — Therapeutic Purgation</h4>
+        <p>Medicated laxative therapy to eliminate excess Pitta from the small intestine and liver. The most frequently performed Panchakarma procedure — safe, effective, and indicated for most Pitta conditions. Medicines: Castor oil (Erandataila), Trivrit (Operculina turpethum), Senna, Trivritti avaleha. Indications: Skin diseases, acne, psoriasis, eczema, liver disorders, hyperacidity, anaemia, headaches, infertility.</p>
+        <h4>3. Basti — Medicated Enema Therapy</h4>
+        <p>Considered the most important of the five procedures — called "Ardha Chikitsa" (half of all treatment) by Charaka. Medicated oils, ghee, or herbal decoctions are administered through the rectum. Two types: Anuvasana Basti (oil enema, retained) and Niruha/Asthapana Basti (decoction enema, expelled). Indications: Constipation, IBS, Vata disorders, arthritis, neurological conditions, infertility, osteoporosis. The colon is the primary seat of Vata — Basti directly pacifies all Vata disorders.</p>
+        <h4>4. Nasya — Nasal Administration</h4>
+        <p>Medicated substances administered through the nostrils to cleanse the head region (above the neck). Eliminates excess Kapha and Vata from the head and neck. Indications: Migraine, sinusitis, brain disorders, eye disorders, hair loss, premature greying, Bell's palsy, cervical spondylosis. The most important procedure for all conditions affecting the head.</p>
+        <h4>5. Raktamokshana — Bloodletting</h4>
+        <p>Blood purification therapy. Methods: Jalauka (leech therapy — most commonly used today), Pracchana (scarification), Siravyadha (venesection), Shringa (horn suction). Removes vitiated Rakta (blood) carrying Pitta toxins. Indications: Skin diseases, gout, varicose veins, abscess, inflammatory joint conditions, herpes. Jalauka (leech) therapy is experiencing a significant revival for localised conditions.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Paschat Karma — Post-Panchakarma Care</h3>
+        <p>After purification, the body channels are clean and the digestive fire is temporarily reduced. Strict dietary protocols (Samsarjana Krama) must be followed for 3-7 days: beginning with warm water and rice gruel (peya), progressing to thicker rice gruel (vilepi), then kichadi, then normal diet. Lifestyle is restricted — no exertion, exposure to extremes of weather, sexual activity, or emotional stress. Rasayana therapy begins after Panchakarma for maximum benefit.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         RASAYANA PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-rasayana">
+      <div class="ph">
+        <div class="ph-crumb">Rejuvenation Science</div>
+        <h2>Rasayana — The Science of Rejuvenation</h2>
+        <div class="gold-line"></div>
+        <p>Rasayana is the eighth branch of Ayurveda dedicated to rejuvenation, longevity, and the enhancement of all body tissues. "Rasa" means essence/the first tissue (plasma), "Ayana" means path — Rasayana is what promotes the ideal flow of nourishment through all seven tissues to ultimately produce Ojas.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Major Rasayana Preparations</h3>
+        <h4>Chyawanprash</h4>
+        <p>The most famous Rasayana. Classical formula from Charaka Samhita. Credited to sage Chyavana who was rejuvenated by it. Contains ~35-50 ingredients including Amalaki (base — 25%), Ashwagandha, Shatavari, Bala, Brahmi, Pippali, Guduchi, Vidarikanda, ghee, honey, sesame oil, and many other herbs. <strong>Benefits:</strong> Immune enhancement, anti-ageing, lung health, reproductive vitality, strength, Ojas building. Dose: 1-2 tsp twice daily, with warm milk.</p>
+        <h4>Brahma Rasayana</h4>
+        <p>Superior brain Rasayana from Charaka Samhita. 49 ingredients base of Amalaki with 49 herbs. Specifically for enhancing memory, intelligence, longevity, and sensory acuity.</p>
+        <h4>Ashwagandha Rasayana</h4>
+        <p>Ashwagandha powder mixed with ghee, honey, and warm milk. Builds muscle, strength, sexual vitality, and emotional resilience. Particularly indicated for Vata types and those suffering from debility, anxiety, or fatigue.</p>
+        <h4>Amalaki Rasayana</h4>
+        <p>Fresh or dried Amalaki prepared with honey and ghee. Charaka states it is the best of all Rasayanas — anti-ageing, balances all three doshas, promotes all seven dhatus, enhances intelligence and strength.</p>
+        <h4>Shatavari Rasayana</h4>
+        <p>Shatavari + ghee + milk + honey. Supreme Rasayana for women — promotes fertility, milk production, hormonal balance, and nourishment. Also beneficial for men for reproductive vitality.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Ojas — The Essence of Vitality</h3>
+        <p>Ojas is the ultimate refined essence produced from the perfect transformation of all seven body tissues. It is the physical substrate of immunity, vitality, spiritual radiance, and longevity. "Ojas is the essence of all Dhatus" — Charaka. Located primarily in the heart.</p>
+        <h4>Foods that build Ojas</h4>
+        <ul>
+          <li>Organic cow's milk (warm, with spices) — supreme Ojas-builder</li>
+          <li>Pure ghee (clarified butter from cow's milk)</li>
+          <li>Natural honey (raw, unheated)</li>
+          <li>Almonds (soaked and peeled)</li>
+          <li>Saffron in warm milk</li>
+          <li>Dates and figs (soaked)</li>
+          <li>Coconut — water, meat, and oil</li>
+          <li>Amalaki (fresh or as Chyawanprash)</li>
+          <li>Sesame seeds and tahini</li>
+          <li>Organic rice and wheat</li>
+        </ul>
+        <h4>What depletes Ojas</h4>
+        <ul>
+          <li>Excessive physical exertion beyond one's capacity</li>
+          <li>Excessive sexual activity</li>
+          <li>Fasting beyond capacity, skipping meals</li>
+          <li>Chronic stress, worry, grief, fear</li>
+          <li>Sleep deprivation — most depleting of all</li>
+          <li>Excessive talking, anger, overwork</li>
+          <li>Alcohol, drugs, junk food</li>
+          <li>Chronic illness</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         FORMULATIONS PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-formulations">
+      <div class="ph">
+        <div class="ph-crumb">Bhaishajya Kalpana</div>
+        <h2>Classical Formulations</h2>
+        <div class="gold-line"></div>
+        <p>Ayurvedic pharmacy (Bhaishajya Kalpana) classifies medicines into five primary and numerous secondary preparation forms. There are over 2,000 classical formulations documented across the major texts.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Dosage Forms (Kalpana)</h3>
+        <ul>
+          <li><strong>Churna (Powder)</strong> — Fine herbal powder. Examples: Triphala churna, Trikatu churna, Ashwagandha churna, Avipattikar churna</li>
+          <li><strong>Kwatha/Kashaya (Decoction)</strong> — 1 part herb to 16 parts water, boiled down to 1/4. Examples: Dashamoola kashaya, Panchatikta kashaya, Punarnavadi kashaya</li>
+          <li><strong>Avaleha/Lehya (Linctus/Jam)</strong> — Semi-solid preparation. Examples: Chyawanprash, Vasavaleha, Agastya haritaki</li>
+          <li><strong>Taila (Medicated Oil)</strong> — Herbs cooked in base oil. Examples: Mahanarayan taila, Ksheerabala taila, Brahmi taila, Anu taila</li>
+          <li><strong>Ghrita (Medicated Ghee)</strong> — Herbs processed in ghee. Examples: Brahmi ghrita, Triphala ghrita, Mahatiktak ghrita</li>
+          <li><strong>Vati/Gutika (Tablet/Pill)</strong> — Compressed herbal pills. Examples: Arogyavardhini vati, Chandraprabha vati, Triphala guggulu</li>
+          <li><strong>Bhasma (Calcined ash)</strong> — Metals/minerals purified through extensive processing. Examples: Swarna (gold) bhasma, Tamra (copper) bhasma, Abhrak bhasma</li>
+          <li><strong>Arishta/Asava (Fermented preparations)</strong> — Self-generated alcohol extracts. Examples: Ashwagandharishta, Dashmularishta, Kutajarishta, Drakshasava</li>
+          <li><strong>Arka (Distillate)</strong> — Steam distillate of herbs. Examples: Ajwain arka, Pudina arka</li>
+          <li><strong>Rasakriya (Thick extract)</strong> — Evaporated decoction. Examples: Satwa of Guduchi, Giloy satwa</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Important Classical Formulations</h3>
+        <h4>Arogyavardhini Vati</h4>
+        <p>Contains Triphala, Shilajatu, Guggulu, Chitrak, Kutki, Pippali, Neem. Indications: Liver diseases, obesity, skin diseases, fever, ascites. One of the most versatile classical formulations.</p>
+        <h4>Mahanarayan Taila</h4>
+        <p>Complex medicated oil with 55+ ingredients including Shatavari, Bala, Ashwagandha, Dashamoola in sesame oil base. Indications: Arthritis, muscle weakness, sports injuries, post-fracture recovery, all Vata disorders. Widely used for Abhyanga and Basti.</p>
+        <h4>Chandraprabha Vati</h4>
+        <p>Contains Shilajatu, Guggulu, Triphala, Trikatu, Vacha, Mustha, and other herbs. Indications: Urinary tract infections, kidney stones, prostate disorders, diabetes, sexual weakness, general debility.</p>
+        <h4>Ashwagandharishta</h4>
+        <p>Fermented preparation with Ashwagandha as the main herb. Indications: Anxiety, stress, insomnia, debility, mental fatigue, post-illness weakness, low libido. Self-generated alcohol acts as carrier to enhance absorption.</p>
+        <h4>Kanchanar Guggulu</h4>
+        <p>Contains Kanchanara bark, Triphala, Trikatu, Varun, Tejpatra, Ela, Tvak, Guggulu. Indications: Thyroid disorders (both hypo and hyper), lymphatic congestion, cysts, lipomas, PCOS, swollen glands.</p>
+        <h4>Hingvastak Churna</h4>
+        <p>Contains Asafoetida (Hing), Trikatu (three peppers), Ajwain, Saindhava, Sunthi. Indications: All types of digestive complaints — gas, bloating, constipation, colic, poor appetite, irritable bowel. Taken with ghee before meals.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         SEASONAL PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-seasons">
+      <div class="ph">
+        <div class="ph-crumb">Ritucharya</div>
+        <h2>Seasonal Routine — Ritucharya</h2>
+        <div class="gold-line"></div>
+        <p>Ayurveda recognises six seasons (in the Indian subcontinent) and prescribes specific diet, lifestyle, and health practices for each. Following Ritucharya prevents seasonal diseases and maintains doshic balance throughout the year.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon">🌸</div>
+          <h3>Vasanta (Spring) — Feb-Apr</h3>
+          <p>Kapha that accumulated in winter melts and can cause congestion, allergies, lethargy. This is Kapha season. Ideal time for Vamana (therapeutic emesis). Diet: Light, dry, bitter foods. Barley, ginger, honey water, bitter vegetables. Exercise vigorously. Avoid: Sweets, dairy, cold foods, daytime sleep.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">☀️</div>
+          <h3>Grishma (Summer) — May-Jul</h3>
+          <p>Pitta increases. Heat depletes strength. Body needs cooling and hydration. Diet: Sweet, liquid, cold (but not ice-cold), light foods. Coconut water, sweet fruits, milk, rice, sugar cane juice. Limit salt and spicy food. Bathe in cool water. Rest during midday. Moonlight walks beneficial.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌧️</div>
+          <h3>Varsha (Monsoon) — Jul-Sep</h3>
+          <p>Vata increases due to irregular digestion from humidity. Agni is weakest. Best time for Basti. Diet: Light, easily digestible — rice, wheat, old grains, ghee, ginger. Medicated wine (Arishtasava) in small amounts with food. Boil all drinking water. Avoid: Raw foods, heavy meals, daytime sleep, excess exercise.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🍂</div>
+          <h3>Sharad (Autumn) — Sep-Nov</h3>
+          <p>Pitta accumulated in summer erupts. Ideal time for Virechana (purgation). Diet: Sweet, bitter, astringent, light, dry. Wheat, rice, green gram, barley, honey. Amla is excellent. Avoid: Curd, fish, sesame, meat, alcohol, exposure to direct sun. Moonlight is beneficial — moon baths for Pitta.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">❄️</div>
+          <h3>Hemanta (Early Winter) — Nov-Jan</h3>
+          <p>Agni is strongest — best digestive capacity. Strength and vitality are at peak. Build Ojas. Diet: Heavy, nourishing, all tastes. Milk, ghee, meat (if non-vegetarian), urad dal, sesame, wine in moderation. Vigorous exercise, oil massage. Sexual activity permissible. Avoid: Cold, light, dry foods.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌨️</div>
+          <h3>Shishira (Late Winter) — Jan-Feb</h3>
+          <p>Similar to Hemanta but transitioning. Kapha begins to accumulate. Diet: Similar to Hemanta but start introducing lighter foods as Kapha builds. Warm, oily, nourishing but not as heavy. Begin increasing activity to prevent Kapha stagnation. Maintain oil massage and warm baths daily.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         DISEASES PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-diseases">
+      <div class="ph">
+        <div class="ph-crumb">Roga Nidana</div>
+        <h2>Conditions & Ayurvedic Approach</h2>
+        <div class="gold-line"></div>
+        <p>Ayurveda describes over 1,120 diseases. Disease (Vyadhi) is the result of the imbalance of Doshas disturbing the normal functioning of the Dhatus (tissues), Agni (digestive fire), Malas (waste products), and the Srotas (channels).</p>
+      </div>
+
+      <div class="alert warn"><span class="alert-icon">⚠️</span><div>Information below is for research and educational purposes. All Ayurvedic treatment protocols must be prescribed and supervised by a qualified BAMS/MD Ayurveda physician. Do not self-treat.</div></div>
+
+      <div class="section-block">
+        <h3>Digestive Disorders</h3>
+        <h4>Agnimandya (Weak Digestion / Dyspepsia)</h4>
+        <p><strong>Ayurvedic cause:</strong> Weakened Jatharagni. <strong>Herbs:</strong> Trikatu, Hingvastak churna, Chitrak, Pippali, Hing. <strong>Diet:</strong> Light, warm food; warm water with ginger and lemon; buttermilk. <strong>Treatment:</strong> Langhana (fasting/lightening), Deepana (Agni-kindling herbs), Pachana (Ama-digestive herbs).</p>
+        <h4>Amlapitta (Hyperacidity / GERD)</h4>
+        <p><strong>Cause:</strong> Excess Pitta. <strong>Herbs:</strong> Shatavari, Yastimadhu (licorice), Amalaki, Shankha bhasma, Kamadudha rasa. <strong>Diet:</strong> Avoid spicy, sour, fried, fermented foods; cool sweet foods beneficial. <strong>Treatment:</strong> Virechana (purgation).</p>
+        <h4>Grahani (IBS / Malabsorption Syndrome)</h4>
+        <p><strong>Cause:</strong> Chronic Agnimandya affecting Grahani (small intestine). <strong>Herbs:</strong> Kutaj (Holarrhena antidysenterica), Bilva, Musta, Nagarmotha, Shankha bhasma. <strong>Treatment:</strong> Basti, Deepana-Pachana therapy, Grahani Kapata rasa.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Musculoskeletal Disorders</h3>
+        <h4>Amavata (Rheumatoid Arthritis)</h4>
+        <p><strong>Cause:</strong> Ama + Vata in joints. <strong>Herbs:</strong> Guggulu (Simhanada, Yogaraj guggulu), Ashwagandha, Shallaki, Nirgundi, Rasna. <strong>Diet:</strong> Light, easily digestible food; ginger water; avoid curd, fish, heavy proteins. <strong>Treatment:</strong> Shodhana (purification) first, especially Virechana; then Shamana.</p>
+        <h4>Sandhivata (Osteoarthritis)</h4>
+        <p><strong>Cause:</strong> Vata in joints with tissue depletion. <strong>Herbs:</strong> Ashwagandha, Shatavari, Bala, Mahanarayan taila. <strong>Treatment:</strong> Basti (primary), Abhyanga, Kati/Janu basti, Pinda sweda.</p>
+        <h4>Gridhrasi (Sciatica)</h4>
+        <p><strong>Cause:</strong> Vata (and sometimes Kapha) affecting the sciatic nerve. <strong>Herbs:</strong> Dashamoola, Nirgundi, Shallaki, Mahayogaraj guggulu. <strong>Treatment:</strong> Basti (most effective), Kati basti, Pizhichil.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Skin Disorders</h3>
+        <h4>Kushtha (Skin diseases — broad category)</h4>
+        <p><strong>Cause:</strong> Imbalance of all three Doshas with predominant Pitta and Kapha; Ama in Rakta (blood). <strong>Herbs:</strong> Neem, Manjistha, Khadira, Haridra, Guduchi, Sariva, Triphala. <strong>Treatment:</strong> Virechana (primary), blood purification (Raktashodhana), Panchatikta ghrita internally.</p>
+        <h4>Psoriasis (Ekakushtha/Kitibha)</h4>
+        <p><strong>Treatment:</strong> Extended Panchakarma (Virechana + Vamana), Panchatikta ghrita for 3-6 months, external application of Mahatiktak ghrita, Neem oil. Avoid dairy, red meat, fermented foods, alcohol.</p>
+        <h4>Acne (Yuvana Pidika)</h4>
+        <p><strong>Cause:</strong> Excess Pitta + Kapha in Rakta (blood). <strong>Herbs:</strong> Manjistha, Neem, Guduchi, Turmeric, Sariva. <strong>Diet:</strong> Avoid spicy, oily, sugary foods. Regular Virechana in season.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Mental & Nervous System</h3>
+        <h4>Chittodvega (Anxiety)</h4>
+        <p><strong>Cause:</strong> Excess Vata in manovaha srotas (mind channels). <strong>Herbs:</strong> Brahmi, Shankhpushpi, Ashwagandha, Jatamansi, Vacha. <strong>Treatment:</strong> Shirodhara (primary), Nasya, Basti; daily Abhyanga; regular routine; Sattvic diet.</p>
+        <h4>Nidranasha (Insomnia)</h4>
+        <p><strong>Cause:</strong> Vata/Pitta aggravation. <strong>Herbs:</strong> Ashwagandha, Tagara (Valeriana), Jatamansi, Brahmi. <strong>Treatment:</strong> Shirodhara, Abhyanga before sleep, warm milk with Ashwagandha and nutmeg, foot massage with sesame oil.</p>
+        <h4>Avaroha Manasika (Depression)</h4>
+        <p><strong>Cause:</strong> Tama and Rajas imbalance, depleted Ojas, Sattva decline. <strong>Herbs:</strong> Brahmi, Ashwagandha, Shatavari, Shankhpushpi, Bhrami. <strong>Treatment:</strong> Nasya, Shirobasti, Shirodhara, Rasayana, yoga, pranayama, connection with nature and Sattva-promoting activities.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         YOGA PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-yoga">
+      <div class="ph">
+        <div class="ph-crumb">Yoga & Pranayama</div>
+        <h2>Yoga & Pranayama in Ayurveda</h2>
+        <div class="gold-line"></div>
+        <p>Yoga and Ayurveda are sister sciences — both branches of the Vedic tree of knowledge. Patanjali's Yoga Sutras describe yoga as "Chitta Vritti Nirodha" — the cessation of fluctuations of the mind. Ayurveda provides the physical and physiological foundation; Yoga provides the mental and spiritual.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Yoga by Dosha Type</h3>
+        <h4>Vata Types — Grounding, Gentle, Warming</h4>
+        <ul>
+          <li>Hold poses longer; move slowly and mindfully</li>
+          <li>Recommended: Standing poses (Tadasana, Virabhadrasana), forward folds, inversions, Yin yoga, restorative yoga</li>
+          <li>Pranayama: Nadi Shodhana (alternate nostril), Bhramari, deep slow breathing</li>
+          <li>Avoid: Hot yoga, vigorous flow, rapid sequences</li>
+        </ul>
+        <h4>Pitta Types — Cooling, Surrendering, Compassionate</h4>
+        <ul>
+          <li>Practice with an attitude of non-competition; avoid pushing to extremes</li>
+          <li>Recommended: Moon salutations, cooling forward folds, twists, Yin yoga, nature-based practice</li>
+          <li>Pranayama: Sitali (cooling breath), Sitkari, Chandra Bhedana, Nadi Shodhana</li>
+          <li>Avoid: Hot yoga, intense competitive practice, power yoga in heat</li>
+        </ul>
+        <h4>Kapha Types — Stimulating, Energising, Warming</h4>
+        <ul>
+          <li>Practice vigorously; minimal rest between poses; stimulate and invigorate</li>
+          <li>Recommended: Sun salutations (multiple rounds), backbends, inversions, Vinyasa flow, Ashtanga</li>
+          <li>Pranayama: Kapalabhati (skull-shining breath), Bhastrika (bellows breath), Surya Bhedana</li>
+          <li>Avoid: Excessive Shavasana, very slow sedentary practice, Yin yoga as primary practice</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Pranayama — The Science of Breath</h3>
+        <h4>Nadi Shodhana (Alternate Nostril Breathing)</h4>
+        <p>Balances left and right hemispheres, calms Vata, reduces anxiety, purifies energy channels (nadis). Practice: 5-15 minutes daily. Inhale left nostril, exhale right; inhale right, exhale left = 1 round.</p>
+        <h4>Kapalabhati (Skull-Shining Breath)</h4>
+        <p>Forceful exhalations with passive inhalations. Clears lungs, stimulates Agni, burns Ama, invigorates Kapha. 3 rounds of 30-100 repetitions. CONTRAINDICATED: Pregnancy, hypertension, heart conditions, hernia, epilepsy.</p>
+        <h4>Bhramari (Bee Breath)</h4>
+        <p>Humming on exhalation. Reduces Pitta and Vata, calms anxiety, improves sleep, beneficial for thyroid. Practice: 5-10 rounds. Particularly effective after Abhyanga and before Shirodhara.</p>
+        <h4>Bhastrika (Bellows Breath)</h4>
+        <p>Rapid forceful inhalations and exhalations. Stimulates Agni strongly, reduces Kapha, warms the body. 3 rounds of 10-20 rapid breaths. CONTRAINDICATED: Same as Kapalabhati.</p>
+        <h4>Ujjayi (Victorious Breath)</h4>
+        <p>Slight constriction of the glottis creating an oceanic sound. Used throughout Vinyasa yoga. Calms the nervous system, focuses the mind, creates internal heat. Good for all types.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Surya Namaskar — Sun Salutation</h3>
+        <p>The complete moving meditation. 12 positions corresponding to the 12 signs of the zodiac. Done at sunrise facing East. A complete workout — stretches and strengthens all muscles, improves all physiological systems. Traditional texts recommend 108 rounds daily for maximum benefit. Begin with 3-5 rounds and gradually increase.</p>
+        <ul>
+          <li>Pranamasana — Prayer pose; establishes intention</li>
+          <li>Hasta Uttanasana — Raised arms; stretches abdominals</li>
+          <li>Pada Hastasana — Forward fold; stretches posterior chain</li>
+          <li>Ashwa Sanchalanasana — Equestrian pose; opens hip flexors</li>
+          <li>Dandasana — Plank; core strength</li>
+          <li>Ashtanga Namaskara — Eight limbs; strengthens upper body</li>
+          <li>Bhujangasana — Cobra; opens chest, strengthens spine</li>
+          <li>Parvatasana — Mountain (downward dog); full body stretch</li>
+          <li>Ashwa Sanchalanasana — Equestrian; other leg</li>
+          <li>Pada Hastasana — Forward fold again</li>
+          <li>Hasta Uttanasana — Raised arms</li>
+          <li>Pranamasana — Return to prayer</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         CHAT / AI PANEL
+    ====================================================== -->
+    <div class="panel" id="panel-chat">
+      <div class="ph">
+        <div class="ph-crumb">AI Research Assistant</div>
+        <h2>Ask the Ayurveda AI</h2>
+        <div class="gold-line"></div>
+        <p>Ask any question about Ayurveda — herbs, treatments, doshas, diet, conditions, formulations, classical texts. This AI is trained on all major Ayurvedic knowledge compiled in this encyclopedia. <strong>Free forever.</strong></p>
+      </div>
+
+      <div class="alert warn"><span class="alert-icon">⚠️</span><div>AI responses are for educational and research purposes only. Not medical advice. Always consult a qualified Ayurvedic physician for treatment.</div></div>
+
+      <div class="chat-section">
+        <div class="chat-header">
+          <h3>🪷 Ayurveda Knowledge Assistant</h3>
+          <span class="free-badge">FREE FOREVER</span>
+        </div>
+        <div class="chat-messages" id="chat-msgs">
+          <div class="cmsg ai">
+            <div class="ai-label">Ayurveda AI</div>
+            Namaste 🙏 I am the Ayurveda Knowledge Assistant, trained on the Charaka Samhita, Sushruta Samhita, Ashtanga Hridayam, and the complete knowledge base of this encyclopedia. Ask me anything about Ayurveda — herbs, doshas, treatments, diet, Panchakarma, Rasayana, or any health concern. <em>Remember: Always consult a qualified Vaidya (Ayurvedic physician) for personal treatment.</em>
+          </div>
+          <div class="cmsg ai">
+            <div class="ai-label">Ayurveda AI</div>
+            Some things you can ask me:<br>
+            • "What herbs are good for anxiety?"<br>
+            • "What is my dosha type if I have dry skin and constipation?"<br>
+            • "How does Panchakarma work?"<br>
+            • "What is the best Rasayana for immunity?"<br>
+            • "What should a Pitta person eat in summer?"
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <input class="chat-input" id="chat-in" placeholder="Ask anything about Ayurveda..." onkeypress="if(event.key==='Enter')sendChat()">
+          <button class="chat-send" onclick="sendChat()">Ask</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>🪷 Ayurveda Encyclopedia</h3>
+        <p>The world's most comprehensive digital encyclopedia of Ayurveda — compiled from classical texts, modern research, and 5,000 years of traditional wisdom. Created for researchers, students, practitioners, and seekers of health.</p>
+        <a class="footer-twitter" href="https://twitter.com/EPureNest" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.766l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @EPureNest
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Knowledge Base</h4>
+        <ul>
+          <li><a href="#" onclick="nav('intro')">Introduction & History</a></li>
+          <li><a href="#" onclick="nav('doshas')">The Three Doshas</a></li>
+          <li><a href="#" onclick="nav('herbs')">Herbs & Plants</a></li>
+          <li><a href="#" onclick="nav('food')">Diet & Nutrition</a></li>
+          <li><a href="#" onclick="nav('routine')">Daily Routine</a></li>
+          <li><a href="#" onclick="nav('seasons')">Seasonal Routine</a></li>
+          <li><a href="#" onclick="nav('treatments')">Treatments</a></li>
+          <li><a href="#" onclick="nav('panchakarma')">Panchakarma</a></li>
+          <li><a href="#" onclick="nav('rasayana')">Rasayana</a></li>
+          <li><a href="#" onclick="nav('diseases')">Conditions</a></li>
+          <li><a href="deep-reference.html" target="_blank">Deep Reference Guide</a></li>
+          <li><a href="quick-reference.html" target="_blank">Quick Reference Card</a></li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+        <div class="qr-section">
+          <img src="75050.jpg" alt="Telegram QR Code" style="width:120px;height:120px;border-radius:8px;display:block;margin:0 auto;" onerror="this.style.display='none';document.getElementById('qr-placeholder').style.display='flex'">
+          <div id="qr-placeholder" style="display:none;width:120px;height:120px;background:rgba(255,255,255,0.1);border-radius:8px;align-items:center;justify-content:center;font-size:40px;">📱</div>
+          <p>Telegram Channel</p>
+        </div>
+        <a class="twitter-badge" href="https://twitter.com/EPureNest" target="_blank" style="margin-top:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.766l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @EPureNest
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="by">
+        Compiled & Curated by <span>Aryan</span> &nbsp;|&nbsp;
+        <span>@EPureNest</span> &nbsp;|&nbsp;
+        For Research & Educational Purposes Only
+      </div>
+      <div style="font-size:11px;color:var(--text3);max-width:600px;text-align:right;line-height:1.6;">
+        Sources: Charaka Samhita · Sushruta Samhita · Ashtanga Hridayam · Ashtanga Sangraha · Madhava Nidana · Sharangadhara Samhita · Bhavaprakasha · Raja Nighantu · Dhanvantari Nighantu · Kashyapa Samhita · and classical Ayurvedic literature.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+// === DISCLAIMER ===
+document.querySelectorAll('.chk-row input').forEach(cb => {
+  cb.addEventListener('change', () => {
+    const all = [...document.querySelectorAll('.chk-row input')].every(c => c.checked);
+    document.getElementById('disc-accept-btn').disabled = !all;
+  });
+});
+function acceptDisclaimer() {
+  document.getElementById('disclaimer-modal').style.display = 'none';
+  sessionStorage.setItem('ayurveda_disc', '1');
+}
+if (sessionStorage.getItem('ayurveda_disc')) {
+  document.getElementById('disclaimer-modal').style.display = 'none';
+}
+
+// === NAVIGATION ===
+function nav(panelId) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(s => s.classList.remove('active'));
+  const p = document.getElementById('panel-' + panelId);
+  if (p) p.classList.add('active');
+  document.querySelectorAll('.nav-item, .sb-item').forEach(el => {
+    if (el.getAttribute('onclick') && el.getAttribute('onclick').includes("'" + panelId + "'")) {
+      el.classList.add('active');
+    }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// === SEARCH ===
+const KNOWLEDGE = {
+  "Ashwagandha": "Withania somnifera. Adaptogen, nervine tonic. Balances Vata and Kapha. Used for anxiety, fatigue, insomnia, sexual weakness, arthritis, immunity. Rasayana herb. Take with warm milk and honey. Caution: Avoid in Pitta excess and high-dose in pregnancy.",
+  "Vata Dosha": "Composed of Air + Space elements. Governs all movement — breathing, circulation, nerve impulses, elimination. Qualities: Dry, light, cold, rough, mobile. Seat: Colon, skin, ears. Imbalance: Anxiety, constipation, dry skin, insomnia, joint pain. Balance with warm, oily, grounding foods and routine.",
+  "Pitta Dosha": "Composed of Fire + Water. Governs transformation — digestion, metabolism, intelligence, vision. Qualities: Hot, sharp, oily, light. Seat: Small intestine, liver, blood, skin, eyes. Imbalance: Acidity, inflammation, anger, rashes, hair loss. Balance with cool, sweet, bitter foods.",
+  "Kapha Dosha": "Composed of Earth + Water. Governs structure and lubrication. Qualities: Heavy, slow, cold, oily, stable. Seat: Chest, stomach, joints. Imbalance: Weight gain, congestion, depression, lethargy, diabetes. Balance with light, dry, warm, spicy foods and vigorous exercise.",
+  "Panchakarma": "Five classical purification therapies: Vamana (emesis for Kapha), Virechana (purgation for Pitta), Basti (enema for Vata — most important), Nasya (nasal therapy for head), Raktamokshana (bloodletting). Must be done under qualified supervision after Purvakarma preparation.",
+  "Triphala": "Equal parts Amalaki + Bibhitaki + Haritaki. Tridoshic. Gentle laxative, antioxidant, eye tonic, digestive, anti-ageing. Take 1 tsp with warm water at night. One of the most universally beneficial Ayurvedic formulations.",
+  "Dinacharya": "Ideal daily routine: Wake at Brahma Muhurta (4-6am), drink warm water, eliminate, scrape tongue, oil pull, nasal oil, self-massage (Abhyanga), exercise, bathe, eat warm breakfast, largest meal at noon, light dinner by 7pm, warm milk before bed, sleep by 10pm.",
+  "Rasayana": "Science of rejuvenation. Builds Ojas (vital essence), promotes longevity, intelligence, immunity. Key Rasayanas: Chyawanprash, Ashwagandha, Shatavari, Amalaki, Brahmi. Best taken after Panchakarma for maximum benefit.",
+  "Tulsi": "Holy Basil, Ocimum tenuiflorum. Adaptogen, antibacterial, antiviral, expectorant. Pungent and bitter taste, heating. Balances Vata and Kapha. Excellent for colds, coughs, fever, stress, infections. Drink as tea daily. Sacred plant in Hinduism.",
+  "Chyawanprash": "Classical Rasayana from Charaka Samhita. Base of Amalaki with 35-50 herbs including Ashwagandha, Shatavari, Pippali, Brahmi, ghee, honey. Dose: 1-2 tsp twice daily with warm milk. Best immune booster in Ayurveda. Suitable for all ages.",
+  "Abhyanga": "Self or assisted warm oil massage. Daily practice for longevity, Vata pacification, improved circulation, skin nourishment. Use sesame oil (Vata), coconut oil (Pitta), mustard oil (Kapha). Massage before bathing for 15-20 minutes.",
+  "Agni": "Digestive fire. Most important concept in Ayurveda. Four states: Sama (balanced), Vishama (irregular-Vata), Tikshna (sharp-Pitta), Manda (slow-Kapha). Most treatment aims to correct Agni. Impaired Agni creates Ama (toxins). Kindle with Trikatu, ginger, warm water.",
+  "Brahmi": "Bacopa monnieri. Medhya Rasayana — brain tonic. Tridoshic. Improves memory, learning, reduces anxiety, anti-epileptic. Cooling. Take with ghee or warm milk. Also used in hair oils for hair growth.",
+  "Amalaki": "Indian gooseberry, Phyllanthus emblica. Most versatile Rasayana. Contains five of six tastes. Highest natural Vitamin C. Tridoshic. Anti-ageing, digestive, immune-enhancing, eye tonic. Fresh fruit ideal; also as Triphala or Chyawanprash.",
+  "Shirodhara": "Continuous warm oil stream poured on forehead for 40-60 minutes. Deepest treatment for Vata disorders of the nervous system. Reduces stress, anxiety, insomnia, PTSD, migraine, hypertension. Considered the crown jewel of Ayurvedic therapies."
+};
+
+function doSearch() {
+  const q = document.getElementById('search-input').value.trim();
+  if (!q) return;
+  quickSearch(q);
+}
+
+function quickSearch(q) {
+  document.getElementById('search-input').value = q;
+  const results = document.getElementById('search-results');
+  results.style.display = 'block';
+
+  let found = [];
+  const ql = q.toLowerCase();
+  for (const [key, val] of Object.entries(KNOWLEDGE)) {
+    if (key.toLowerCase().includes(ql) || val.toLowerCase().includes(ql)) {
+      found.push({ key, val });
+    }
+  }
+
+  if (found.length === 0) {
+    results.innerHTML = `<div class="alert info"><span class="alert-icon">🔍</span><div>No specific entry found for "<strong>${q}</strong>". Try browsing the sections in the sidebar, or ask the AI in the <a href="#" onclick="nav('chat')" style="color:var(--green);">Chat section</a>.</div></div>`;
+  } else {
+    results.innerHTML = found.map(f => `
+      <div class="section-block" style="margin-bottom:16px;">
+        <h3 style="font-size:16px;">${f.key}</h3>
+        <p style="margin:0;">${f.val}</p>
+      </div>
+    `).join('');
+  }
+}
+
+// === AI CHAT ===
+const AYURVEDA_AI = {
+  "anxiety": "For anxiety (Chittodvega in Ayurveda), the primary cause is excess Vata in the manovaha srotas (mind channels). Key recommendations:\n\n🌿 **Herbs:** Brahmi (500mg twice daily with ghee), Ashwagandha (300-500mg with warm milk), Shankhpushpi syrup, Jatamansi.\n\n💆 **Treatments:** Shirodhara (most effective single treatment for anxiety), daily Abhyanga with Brahmi or Bala tailam, Nasya with Brahmi ghrita.\n\n🍽 **Diet:** Warm, oily, grounding foods. Warm milk with Ashwagandha, saffron and cardamom before bed. Avoid caffeine, alcohol, raw cold foods.\n\n🌅 **Lifestyle:** Strict regular routine is medicine for Vata. Nadi Shodhana pranayama 10-15 minutes daily. Early sleep, minimise screen time.\n\n⚠️ Please consult a qualified Ayurvedic physician for personalised treatment.",
+  "insomnia": "For Nidranasha (insomnia), Ayurveda identifies excess Vata and sometimes Pitta as causes.\n\n🌿 **Herbs:** Ashwagandha + Brahmi at bedtime, Tagara (Valeriana wallichii), Jatamansi, Mandukaparni.\n\n💆 **Treatments:** Shirodhara, Shirobasti (oil pool on head), foot massage with warm sesame oil before sleep, warm Abhyanga.\n\n🍵 **Bedtime Ritual:** Warm milk with 1/2 tsp Ashwagandha + pinch nutmeg + pinch cardamom + pinch turmeric + honey (add after cooling) — 30 minutes before sleep.\n\n⏰ **Timing:** Sleep by 10pm (before Pitta time). Avoid screens 1 hour before bed. Keep room cool and dark. Do not eat within 3 hours of sleep.\n\n⚠️ Consult a Vaidya for personalised treatment.",
+  "dosha": "To identify your Prakriti (constitution), consider your inherent nature — not your current state:\n\n**VATA signs:** Thin build, dry skin, irregular digestion, creative/anxious mind, variable appetite, cold hands and feet, light sleep, fast talker.\n\n**PITTA signs:** Medium athletic build, sharp hunger, warm body, intelligent/perfectionist, oily skin, strong digestion, moderate sleep, leadership qualities.\n\n**KAPHA signs:** Larger solid build, slow but strong digestion, oily cool skin, calm/loving/stubborn nature, deep sound sleep, excellent memory retention, slow metabolism.\n\nMost people are a combination (Dvandva or Tridoshic). The BEST way to determine your Prakriti is through pulse diagnosis (Nadi Pariksha) by a qualified Ayurvedic physician.",
+  "immunity": "Immunity in Ayurveda is governed by Ojas — the refined essence of all seven body tissues.\n\n**Top Rasayanas for Immunity:**\n🌟 Chyawanprash — 1-2 tsp twice daily with warm milk (best for all ages)\n🌟 Guduchi (Giloy) — Called Amrita. Strongest immunomodulator in Ayurveda\n🌟 Amalaki (Amla) — Highest Vitamin C; take fresh or as Triphala\n🌟 Tulsi tea — Daily morning ritual\n🌟 Turmeric in warm milk (golden milk) — Anti-inflammatory, antimicrobial\n🌟 Ashwagandha — Adaptogenic immune support\n\n**Ojas-Building Habits:**\n• Regular sleep (10pm-6am)\n• Daily Abhyanga (oil massage)\n• Warm, fresh, wholesome food\n• Reduction of stress (yoga, meditation)\n\n⚠️ Always consult a Vaidya for personalised Rasayana prescription.",
+  "digestion": "Digestive health in Ayurveda begins with Agni (digestive fire). Most disease is rooted in weak Agni.\n\n**Daily Digestive Practices:**\n• Warm water with ginger and lemon — first thing in the morning\n• Trikatu churna (ginger + black pepper + long pepper) with ghee before meals\n• Eat largest meal at noon (Agni is strongest)\n• Walk 100 steps after meals\n• Avoid cold water during and after meals\n• Buttermilk (Takra) with meals — 'He who uses Takra daily does not suffer from disease' — Charaka\n\n**Herbs for Digestion:**\n🌿 Trikatu — Kindles Agni, removes Ama\n🌿 Hingvastak churna — Gas, bloating, colic\n🌿 Haritaki — Gentle laxative, tones intestines\n🌿 Triphala — Evening — cleanses entire GI tract\n\n⚠️ For chronic digestive issues, please consult an Ayurvedic physician."
+};
+
+function sendChat() {
+  const input = document.getElementById('chat-in');
+  const msg = input.value.trim();
+  if (!msg) return;
+  const msgs = document.getElementById('chat-msgs');
+
+  // User message
+  const um = document.createElement('div');
+  um.className = 'cmsg user';
+  um.textContent = msg;
+  msgs.appendChild(um);
+  input.value = '';
+  msgs.scrollTop = msgs.scrollHeight;
+
+  // Typing indicator
+  const tid = 'typing-' + Date.now();
+  const ti = document.createElement('div');
+  ti.className = 'cmsg ai';
+  ti.id = tid;
+  ti.innerHTML = '<div class="ai-label">Ayurveda AI</div><div class="typing"><span></span><span></span><span></span></div>';
+  msgs.appendChild(ti);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  // Find response
+  setTimeout(() => {
+    document.getElementById(tid)?.remove();
+    const ml = msg.toLowerCase();
+    let resp = '';
+
+    for (const [k, v] of Object.entries(AYURVEDA_AI)) {
+      if (ml.includes(k)) { resp = v; break; }
+    }
+
+    // Search knowledge base
+    if (!resp) {
+      for (const [key, val] of Object.entries(KNOWLEDGE)) {
+        if (ml.includes(key.toLowerCase()) || key.toLowerCase().includes(ml)) {
+          resp = `**${key}**\n\n${val}\n\n⚠️ This is educational information from the Ayurveda Encyclopedia. For personalised treatment, please consult a qualified Vaidya.`;
+          break;
+        }
+      }
+    }
+
+    if (!resp) {
+      resp = `Thank you for your question about "${msg}". Based on the Ayurvedic knowledge base:\n\nAyurveda approaches every query through the lens of the individual's Prakriti (constitution) and current Vikriti (imbalance). The answer to "${msg}" would depend on your specific dosha balance, current health status, season, age, and digestive strength.\n\nFor specific information, please browse the relevant sections:\n• Doshas, Herbs, Treatments, Diet, Routines\n\nFor personalised advice, please consult a qualified Ayurvedic physician (BAMS/MD Ayurveda).\n\n⚠️ All AI responses are for educational research only — not medical advice.`;
+    }
+
+    const am = document.createElement('div');
+    am.className = 'cmsg ai';
+    am.innerHTML = '<div class="ai-label">Ayurveda AI</div>' + resp.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+    msgs.appendChild(am);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1200);
+}
+</script>
+</body>
+</html>
